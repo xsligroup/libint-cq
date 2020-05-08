@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -35,7 +35,15 @@ void (*libint2_build_1emultipole[8][8])(const Libint_t*);
 void (*libint2_build_2emultipole[8][8])(const Libint_t*);
 void (*libint2_build_3emultipole[8][8])(const Libint_t*);
 void (*libint2_build_sphemultipole[8][8])(const Libint_t*);
+void (*libint2_build_overlap1[8][8])(const Libint_t*);
+void (*libint2_build_kinetic1[8][8])(const Libint_t*);
+void (*libint2_build_elecpot1[8][8])(const Libint_t*);
+void (*libint2_build_1emultipole1[8][8])(const Libint_t*);
+void (*libint2_build_2emultipole1[8][8])(const Libint_t*);
+void (*libint2_build_3emultipole1[8][8])(const Libint_t*);
+void (*libint2_build_sphemultipole1[8][8])(const Libint_t*);
 void (*libint2_build_eri[8][8][8][8])(const Libint_t*);
+void (*libint2_build_eri1[8][8][8][8])(const Libint_t*);
 void (*libint2_build_3eri[8][8][8])(const Libint_t*);
 void (*libint2_build_2eri[8][8])(const Libint_t*);
 void libint2_static_init() {
@@ -930,6 +938,390 @@ libint2_build_sphemultipole[7][5] = _sphemultipole_K_H;
 libint2_build_sphemultipole[7][6] = _sphemultipole_K_I;
 
 libint2_build_sphemultipole[7][7] = _sphemultipole_K_K;
+
+libint2_build_overlap1[0][0] = _overlapderiv1_S_S;
+
+libint2_build_overlap1[0][1] = _overlapderiv1_S_P;
+
+libint2_build_overlap1[0][2] = _overlapderiv1_S_D;
+
+libint2_build_overlap1[0][3] = _overlapderiv1_S_F;
+
+libint2_build_overlap1[0][4] = _overlapderiv1_S_G;
+
+libint2_build_overlap1[0][5] = _overlapderiv1_S_H;
+
+libint2_build_overlap1[0][6] = _overlapderiv1_S_I;
+
+libint2_build_overlap1[0][7] = _overlapderiv1_S_K;
+
+libint2_build_overlap1[1][0] = _overlapderiv1_P_S;
+
+libint2_build_overlap1[1][1] = _overlapderiv1_P_P;
+
+libint2_build_overlap1[1][2] = _overlapderiv1_P_D;
+
+libint2_build_overlap1[1][3] = _overlapderiv1_P_F;
+
+libint2_build_overlap1[1][4] = _overlapderiv1_P_G;
+
+libint2_build_overlap1[1][5] = _overlapderiv1_P_H;
+
+libint2_build_overlap1[1][6] = _overlapderiv1_P_I;
+
+libint2_build_overlap1[1][7] = _overlapderiv1_P_K;
+
+libint2_build_overlap1[2][0] = _overlapderiv1_D_S;
+
+libint2_build_overlap1[2][1] = _overlapderiv1_D_P;
+
+libint2_build_overlap1[2][2] = _overlapderiv1_D_D;
+
+libint2_build_overlap1[2][3] = _overlapderiv1_D_F;
+
+libint2_build_overlap1[2][4] = _overlapderiv1_D_G;
+
+libint2_build_overlap1[2][5] = _overlapderiv1_D_H;
+
+libint2_build_overlap1[2][6] = _overlapderiv1_D_I;
+
+libint2_build_overlap1[2][7] = _overlapderiv1_D_K;
+
+libint2_build_overlap1[3][0] = _overlapderiv1_F_S;
+
+libint2_build_overlap1[3][1] = _overlapderiv1_F_P;
+
+libint2_build_overlap1[3][2] = _overlapderiv1_F_D;
+
+libint2_build_overlap1[3][3] = _overlapderiv1_F_F;
+
+libint2_build_overlap1[3][4] = _overlapderiv1_F_G;
+
+libint2_build_overlap1[3][5] = _overlapderiv1_F_H;
+
+libint2_build_overlap1[3][6] = _overlapderiv1_F_I;
+
+libint2_build_overlap1[3][7] = _overlapderiv1_F_K;
+
+libint2_build_overlap1[4][0] = _overlapderiv1_G_S;
+
+libint2_build_overlap1[4][1] = _overlapderiv1_G_P;
+
+libint2_build_overlap1[4][2] = _overlapderiv1_G_D;
+
+libint2_build_overlap1[4][3] = _overlapderiv1_G_F;
+
+libint2_build_overlap1[4][4] = _overlapderiv1_G_G;
+
+libint2_build_overlap1[4][5] = _overlapderiv1_G_H;
+
+libint2_build_overlap1[4][6] = _overlapderiv1_G_I;
+
+libint2_build_overlap1[4][7] = _overlapderiv1_G_K;
+
+libint2_build_overlap1[5][0] = _overlapderiv1_H_S;
+
+libint2_build_overlap1[5][1] = _overlapderiv1_H_P;
+
+libint2_build_overlap1[5][2] = _overlapderiv1_H_D;
+
+libint2_build_overlap1[5][3] = _overlapderiv1_H_F;
+
+libint2_build_overlap1[5][4] = _overlapderiv1_H_G;
+
+libint2_build_overlap1[5][5] = _overlapderiv1_H_H;
+
+libint2_build_overlap1[5][6] = _overlapderiv1_H_I;
+
+libint2_build_overlap1[5][7] = _overlapderiv1_H_K;
+
+libint2_build_overlap1[6][0] = _overlapderiv1_I_S;
+
+libint2_build_overlap1[6][1] = _overlapderiv1_I_P;
+
+libint2_build_overlap1[6][2] = _overlapderiv1_I_D;
+
+libint2_build_overlap1[6][3] = _overlapderiv1_I_F;
+
+libint2_build_overlap1[6][4] = _overlapderiv1_I_G;
+
+libint2_build_overlap1[6][5] = _overlapderiv1_I_H;
+
+libint2_build_overlap1[6][6] = _overlapderiv1_I_I;
+
+libint2_build_overlap1[6][7] = _overlapderiv1_I_K;
+
+libint2_build_overlap1[7][0] = _overlapderiv1_K_S;
+
+libint2_build_overlap1[7][1] = _overlapderiv1_K_P;
+
+libint2_build_overlap1[7][2] = _overlapderiv1_K_D;
+
+libint2_build_overlap1[7][3] = _overlapderiv1_K_F;
+
+libint2_build_overlap1[7][4] = _overlapderiv1_K_G;
+
+libint2_build_overlap1[7][5] = _overlapderiv1_K_H;
+
+libint2_build_overlap1[7][6] = _overlapderiv1_K_I;
+
+libint2_build_overlap1[7][7] = _overlapderiv1_K_K;
+
+libint2_build_kinetic1[0][0] = _kineticderiv1_S_S;
+
+libint2_build_kinetic1[0][1] = _kineticderiv1_S_P;
+
+libint2_build_kinetic1[0][2] = _kineticderiv1_S_D;
+
+libint2_build_kinetic1[0][3] = _kineticderiv1_S_F;
+
+libint2_build_kinetic1[0][4] = _kineticderiv1_S_G;
+
+libint2_build_kinetic1[0][5] = _kineticderiv1_S_H;
+
+libint2_build_kinetic1[0][6] = _kineticderiv1_S_I;
+
+libint2_build_kinetic1[0][7] = _kineticderiv1_S_K;
+
+libint2_build_kinetic1[1][0] = _kineticderiv1_P_S;
+
+libint2_build_kinetic1[1][1] = _kineticderiv1_P_P;
+
+libint2_build_kinetic1[1][2] = _kineticderiv1_P_D;
+
+libint2_build_kinetic1[1][3] = _kineticderiv1_P_F;
+
+libint2_build_kinetic1[1][4] = _kineticderiv1_P_G;
+
+libint2_build_kinetic1[1][5] = _kineticderiv1_P_H;
+
+libint2_build_kinetic1[1][6] = _kineticderiv1_P_I;
+
+libint2_build_kinetic1[1][7] = _kineticderiv1_P_K;
+
+libint2_build_kinetic1[2][0] = _kineticderiv1_D_S;
+
+libint2_build_kinetic1[2][1] = _kineticderiv1_D_P;
+
+libint2_build_kinetic1[2][2] = _kineticderiv1_D_D;
+
+libint2_build_kinetic1[2][3] = _kineticderiv1_D_F;
+
+libint2_build_kinetic1[2][4] = _kineticderiv1_D_G;
+
+libint2_build_kinetic1[2][5] = _kineticderiv1_D_H;
+
+libint2_build_kinetic1[2][6] = _kineticderiv1_D_I;
+
+libint2_build_kinetic1[2][7] = _kineticderiv1_D_K;
+
+libint2_build_kinetic1[3][0] = _kineticderiv1_F_S;
+
+libint2_build_kinetic1[3][1] = _kineticderiv1_F_P;
+
+libint2_build_kinetic1[3][2] = _kineticderiv1_F_D;
+
+libint2_build_kinetic1[3][3] = _kineticderiv1_F_F;
+
+libint2_build_kinetic1[3][4] = _kineticderiv1_F_G;
+
+libint2_build_kinetic1[3][5] = _kineticderiv1_F_H;
+
+libint2_build_kinetic1[3][6] = _kineticderiv1_F_I;
+
+libint2_build_kinetic1[3][7] = _kineticderiv1_F_K;
+
+libint2_build_kinetic1[4][0] = _kineticderiv1_G_S;
+
+libint2_build_kinetic1[4][1] = _kineticderiv1_G_P;
+
+libint2_build_kinetic1[4][2] = _kineticderiv1_G_D;
+
+libint2_build_kinetic1[4][3] = _kineticderiv1_G_F;
+
+libint2_build_kinetic1[4][4] = _kineticderiv1_G_G;
+
+libint2_build_kinetic1[4][5] = _kineticderiv1_G_H;
+
+libint2_build_kinetic1[4][6] = _kineticderiv1_G_I;
+
+libint2_build_kinetic1[4][7] = _kineticderiv1_G_K;
+
+libint2_build_kinetic1[5][0] = _kineticderiv1_H_S;
+
+libint2_build_kinetic1[5][1] = _kineticderiv1_H_P;
+
+libint2_build_kinetic1[5][2] = _kineticderiv1_H_D;
+
+libint2_build_kinetic1[5][3] = _kineticderiv1_H_F;
+
+libint2_build_kinetic1[5][4] = _kineticderiv1_H_G;
+
+libint2_build_kinetic1[5][5] = _kineticderiv1_H_H;
+
+libint2_build_kinetic1[5][6] = _kineticderiv1_H_I;
+
+libint2_build_kinetic1[5][7] = _kineticderiv1_H_K;
+
+libint2_build_kinetic1[6][0] = _kineticderiv1_I_S;
+
+libint2_build_kinetic1[6][1] = _kineticderiv1_I_P;
+
+libint2_build_kinetic1[6][2] = _kineticderiv1_I_D;
+
+libint2_build_kinetic1[6][3] = _kineticderiv1_I_F;
+
+libint2_build_kinetic1[6][4] = _kineticderiv1_I_G;
+
+libint2_build_kinetic1[6][5] = _kineticderiv1_I_H;
+
+libint2_build_kinetic1[6][6] = _kineticderiv1_I_I;
+
+libint2_build_kinetic1[6][7] = _kineticderiv1_I_K;
+
+libint2_build_kinetic1[7][0] = _kineticderiv1_K_S;
+
+libint2_build_kinetic1[7][1] = _kineticderiv1_K_P;
+
+libint2_build_kinetic1[7][2] = _kineticderiv1_K_D;
+
+libint2_build_kinetic1[7][3] = _kineticderiv1_K_F;
+
+libint2_build_kinetic1[7][4] = _kineticderiv1_K_G;
+
+libint2_build_kinetic1[7][5] = _kineticderiv1_K_H;
+
+libint2_build_kinetic1[7][6] = _kineticderiv1_K_I;
+
+libint2_build_kinetic1[7][7] = _kineticderiv1_K_K;
+
+libint2_build_elecpot1[0][0] = _elecpotderiv1_S_S;
+
+libint2_build_elecpot1[0][1] = _elecpotderiv1_S_P;
+
+libint2_build_elecpot1[0][2] = _elecpotderiv1_S_D;
+
+libint2_build_elecpot1[0][3] = _elecpotderiv1_S_F;
+
+libint2_build_elecpot1[0][4] = _elecpotderiv1_S_G;
+
+libint2_build_elecpot1[0][5] = _elecpotderiv1_S_H;
+
+libint2_build_elecpot1[0][6] = _elecpotderiv1_S_I;
+
+libint2_build_elecpot1[0][7] = _elecpotderiv1_S_K;
+
+libint2_build_elecpot1[1][0] = _elecpotderiv1_P_S;
+
+libint2_build_elecpot1[1][1] = _elecpotderiv1_P_P;
+
+libint2_build_elecpot1[1][2] = _elecpotderiv1_P_D;
+
+libint2_build_elecpot1[1][3] = _elecpotderiv1_P_F;
+
+libint2_build_elecpot1[1][4] = _elecpotderiv1_P_G;
+
+libint2_build_elecpot1[1][5] = _elecpotderiv1_P_H;
+
+libint2_build_elecpot1[1][6] = _elecpotderiv1_P_I;
+
+libint2_build_elecpot1[1][7] = _elecpotderiv1_P_K;
+
+libint2_build_elecpot1[2][0] = _elecpotderiv1_D_S;
+
+libint2_build_elecpot1[2][1] = _elecpotderiv1_D_P;
+
+libint2_build_elecpot1[2][2] = _elecpotderiv1_D_D;
+
+libint2_build_elecpot1[2][3] = _elecpotderiv1_D_F;
+
+libint2_build_elecpot1[2][4] = _elecpotderiv1_D_G;
+
+libint2_build_elecpot1[2][5] = _elecpotderiv1_D_H;
+
+libint2_build_elecpot1[2][6] = _elecpotderiv1_D_I;
+
+libint2_build_elecpot1[2][7] = _elecpotderiv1_D_K;
+
+libint2_build_elecpot1[3][0] = _elecpotderiv1_F_S;
+
+libint2_build_elecpot1[3][1] = _elecpotderiv1_F_P;
+
+libint2_build_elecpot1[3][2] = _elecpotderiv1_F_D;
+
+libint2_build_elecpot1[3][3] = _elecpotderiv1_F_F;
+
+libint2_build_elecpot1[3][4] = _elecpotderiv1_F_G;
+
+libint2_build_elecpot1[3][5] = _elecpotderiv1_F_H;
+
+libint2_build_elecpot1[3][6] = _elecpotderiv1_F_I;
+
+libint2_build_elecpot1[3][7] = _elecpotderiv1_F_K;
+
+libint2_build_elecpot1[4][0] = _elecpotderiv1_G_S;
+
+libint2_build_elecpot1[4][1] = _elecpotderiv1_G_P;
+
+libint2_build_elecpot1[4][2] = _elecpotderiv1_G_D;
+
+libint2_build_elecpot1[4][3] = _elecpotderiv1_G_F;
+
+libint2_build_elecpot1[4][4] = _elecpotderiv1_G_G;
+
+libint2_build_elecpot1[4][5] = _elecpotderiv1_G_H;
+
+libint2_build_elecpot1[4][6] = _elecpotderiv1_G_I;
+
+libint2_build_elecpot1[4][7] = _elecpotderiv1_G_K;
+
+libint2_build_elecpot1[5][0] = _elecpotderiv1_H_S;
+
+libint2_build_elecpot1[5][1] = _elecpotderiv1_H_P;
+
+libint2_build_elecpot1[5][2] = _elecpotderiv1_H_D;
+
+libint2_build_elecpot1[5][3] = _elecpotderiv1_H_F;
+
+libint2_build_elecpot1[5][4] = _elecpotderiv1_H_G;
+
+libint2_build_elecpot1[5][5] = _elecpotderiv1_H_H;
+
+libint2_build_elecpot1[5][6] = _elecpotderiv1_H_I;
+
+libint2_build_elecpot1[5][7] = _elecpotderiv1_H_K;
+
+libint2_build_elecpot1[6][0] = _elecpotderiv1_I_S;
+
+libint2_build_elecpot1[6][1] = _elecpotderiv1_I_P;
+
+libint2_build_elecpot1[6][2] = _elecpotderiv1_I_D;
+
+libint2_build_elecpot1[6][3] = _elecpotderiv1_I_F;
+
+libint2_build_elecpot1[6][4] = _elecpotderiv1_I_G;
+
+libint2_build_elecpot1[6][5] = _elecpotderiv1_I_H;
+
+libint2_build_elecpot1[6][6] = _elecpotderiv1_I_I;
+
+libint2_build_elecpot1[6][7] = _elecpotderiv1_I_K;
+
+libint2_build_elecpot1[7][0] = _elecpotderiv1_K_S;
+
+libint2_build_elecpot1[7][1] = _elecpotderiv1_K_P;
+
+libint2_build_elecpot1[7][2] = _elecpotderiv1_K_D;
+
+libint2_build_elecpot1[7][3] = _elecpotderiv1_K_F;
+
+libint2_build_elecpot1[7][4] = _elecpotderiv1_K_G;
+
+libint2_build_elecpot1[7][5] = _elecpotderiv1_K_H;
+
+libint2_build_elecpot1[7][6] = _elecpotderiv1_K_I;
+
+libint2_build_elecpot1[7][7] = _elecpotderiv1_K_K;
 
 libint2_build_eri[0][0][0][0] = _aB_S__0__S__1___TwoPRep_S__0__S__1___Ab__up_0;
 
@@ -2330,6 +2722,1406 @@ libint2_build_eri[7][6][7][6] = _aB_K__0__K__1___TwoPRep_I__0__I__1___Ab__up_0;
 libint2_build_eri[7][6][7][7] = _aB_K__0__K__1___TwoPRep_I__0__K__1___Ab__up_0;
 
 libint2_build_eri[7][7][7][7] = _aB_K__0__K__1___TwoPRep_K__0__K__1___Ab__up_0;
+
+libint2_build_eri1[0][0][0][0] = deriv1_aB_S__0__S__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][1][0] = deriv1_aB_S__0__P__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][1][1] = deriv1_aB_S__0__P__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][2][0] = deriv1_aB_S__0__D__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][2][1] = deriv1_aB_S__0__D__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][2][2] = deriv1_aB_S__0__D__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][3][0] = deriv1_aB_S__0__F__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][3][1] = deriv1_aB_S__0__F__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][3][2] = deriv1_aB_S__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][3][3] = deriv1_aB_S__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[0][0][4][0] = deriv1_aB_S__0__G__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][4][1] = deriv1_aB_S__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][4][2] = deriv1_aB_S__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][4][3] = deriv1_aB_S__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[0][0][4][4] = deriv1_aB_S__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][0] = deriv1_aB_S__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][1] = deriv1_aB_S__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][2] = deriv1_aB_S__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][3] = deriv1_aB_S__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][4] = deriv1_aB_S__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[0][0][5][5] = deriv1_aB_S__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][0] = deriv1_aB_S__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][1] = deriv1_aB_S__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][2] = deriv1_aB_S__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][3] = deriv1_aB_S__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][4] = deriv1_aB_S__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][5] = deriv1_aB_S__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[0][0][6][6] = deriv1_aB_S__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][0] = deriv1_aB_S__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][1] = deriv1_aB_S__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][2] = deriv1_aB_S__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][3] = deriv1_aB_S__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][4] = deriv1_aB_S__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][5] = deriv1_aB_S__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][6] = deriv1_aB_S__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[0][0][7][7] = deriv1_aB_S__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[1][0][1][0] = deriv1_aB_P__0__P__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][1][1] = deriv1_aB_P__0__P__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][2][0] = deriv1_aB_P__0__D__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][2][1] = deriv1_aB_P__0__D__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][2][2] = deriv1_aB_P__0__D__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][3][0] = deriv1_aB_P__0__F__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][3][1] = deriv1_aB_P__0__F__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][3][2] = deriv1_aB_P__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][3][3] = deriv1_aB_P__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][0][4][0] = deriv1_aB_P__0__G__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][4][1] = deriv1_aB_P__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][4][2] = deriv1_aB_P__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][4][3] = deriv1_aB_P__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][0][4][4] = deriv1_aB_P__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][0] = deriv1_aB_P__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][1] = deriv1_aB_P__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][2] = deriv1_aB_P__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][3] = deriv1_aB_P__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][4] = deriv1_aB_P__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][0][5][5] = deriv1_aB_P__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][0] = deriv1_aB_P__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][1] = deriv1_aB_P__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][2] = deriv1_aB_P__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][3] = deriv1_aB_P__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][4] = deriv1_aB_P__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][5] = deriv1_aB_P__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][0][6][6] = deriv1_aB_P__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][0] = deriv1_aB_P__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][1] = deriv1_aB_P__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][2] = deriv1_aB_P__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][3] = deriv1_aB_P__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][4] = deriv1_aB_P__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][5] = deriv1_aB_P__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][6] = deriv1_aB_P__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[1][0][7][7] = deriv1_aB_P__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[1][1][1][1] = deriv1_aB_P__0__P__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][2][0] = deriv1_aB_P__0__D__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][2][1] = deriv1_aB_P__0__D__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][2][2] = deriv1_aB_P__0__D__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][3][0] = deriv1_aB_P__0__F__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][3][1] = deriv1_aB_P__0__F__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][3][2] = deriv1_aB_P__0__F__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][3][3] = deriv1_aB_P__0__F__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][1][4][0] = deriv1_aB_P__0__G__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][4][1] = deriv1_aB_P__0__G__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][4][2] = deriv1_aB_P__0__G__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][4][3] = deriv1_aB_P__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][1][4][4] = deriv1_aB_P__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][0] = deriv1_aB_P__0__H__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][1] = deriv1_aB_P__0__H__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][2] = deriv1_aB_P__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][3] = deriv1_aB_P__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][4] = deriv1_aB_P__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][1][5][5] = deriv1_aB_P__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][0] = deriv1_aB_P__0__I__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][1] = deriv1_aB_P__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][2] = deriv1_aB_P__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][3] = deriv1_aB_P__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][4] = deriv1_aB_P__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][5] = deriv1_aB_P__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][1][6][6] = deriv1_aB_P__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][0] = deriv1_aB_P__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][1] = deriv1_aB_P__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][2] = deriv1_aB_P__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][3] = deriv1_aB_P__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][4] = deriv1_aB_P__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][5] = deriv1_aB_P__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][6] = deriv1_aB_P__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[1][1][7][7] = deriv1_aB_P__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[2][0][1][1] = deriv1_aB_D__0__P__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][2][0] = deriv1_aB_D__0__D__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][2][1] = deriv1_aB_D__0__D__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][2][2] = deriv1_aB_D__0__D__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][3][0] = deriv1_aB_D__0__F__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][3][1] = deriv1_aB_D__0__F__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][3][2] = deriv1_aB_D__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][3][3] = deriv1_aB_D__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][0][4][0] = deriv1_aB_D__0__G__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][4][1] = deriv1_aB_D__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][4][2] = deriv1_aB_D__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][4][3] = deriv1_aB_D__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][0][4][4] = deriv1_aB_D__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][0] = deriv1_aB_D__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][1] = deriv1_aB_D__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][2] = deriv1_aB_D__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][3] = deriv1_aB_D__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][4] = deriv1_aB_D__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][0][5][5] = deriv1_aB_D__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][0] = deriv1_aB_D__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][1] = deriv1_aB_D__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][2] = deriv1_aB_D__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][3] = deriv1_aB_D__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][4] = deriv1_aB_D__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][5] = deriv1_aB_D__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][0][6][6] = deriv1_aB_D__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][0] = deriv1_aB_D__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][1] = deriv1_aB_D__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][2] = deriv1_aB_D__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][3] = deriv1_aB_D__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][4] = deriv1_aB_D__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][5] = deriv1_aB_D__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][6] = deriv1_aB_D__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][0][7][7] = deriv1_aB_D__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[2][1][2][1] = deriv1_aB_D__0__D__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][2][2] = deriv1_aB_D__0__D__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][3][0] = deriv1_aB_D__0__F__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][1][3][1] = deriv1_aB_D__0__F__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][3][2] = deriv1_aB_D__0__F__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][3][3] = deriv1_aB_D__0__F__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][1][4][0] = deriv1_aB_D__0__G__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][1][4][1] = deriv1_aB_D__0__G__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][4][2] = deriv1_aB_D__0__G__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][4][3] = deriv1_aB_D__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][1][4][4] = deriv1_aB_D__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][0] = deriv1_aB_D__0__H__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][1] = deriv1_aB_D__0__H__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][2] = deriv1_aB_D__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][3] = deriv1_aB_D__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][4] = deriv1_aB_D__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][1][5][5] = deriv1_aB_D__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][0] = deriv1_aB_D__0__I__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][1] = deriv1_aB_D__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][2] = deriv1_aB_D__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][3] = deriv1_aB_D__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][4] = deriv1_aB_D__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][5] = deriv1_aB_D__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][1][6][6] = deriv1_aB_D__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][0] = deriv1_aB_D__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][1] = deriv1_aB_D__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][2] = deriv1_aB_D__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][3] = deriv1_aB_D__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][4] = deriv1_aB_D__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][5] = deriv1_aB_D__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][6] = deriv1_aB_D__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][1][7][7] = deriv1_aB_D__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[2][2][2][2] = deriv1_aB_D__0__D__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][3][1] = deriv1_aB_D__0__F__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][2][3][2] = deriv1_aB_D__0__F__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][3][3] = deriv1_aB_D__0__F__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][2][4][0] = deriv1_aB_D__0__G__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][2][4][1] = deriv1_aB_D__0__G__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][2][4][2] = deriv1_aB_D__0__G__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][4][3] = deriv1_aB_D__0__G__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][2][4][4] = deriv1_aB_D__0__G__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][0] = deriv1_aB_D__0__H__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][1] = deriv1_aB_D__0__H__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][2] = deriv1_aB_D__0__H__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][3] = deriv1_aB_D__0__H__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][4] = deriv1_aB_D__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][2][5][5] = deriv1_aB_D__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][0] = deriv1_aB_D__0__I__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][1] = deriv1_aB_D__0__I__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][2] = deriv1_aB_D__0__I__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][3] = deriv1_aB_D__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][4] = deriv1_aB_D__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][5] = deriv1_aB_D__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][2][6][6] = deriv1_aB_D__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][0] = deriv1_aB_D__0__K__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][1] = deriv1_aB_D__0__K__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][2] = deriv1_aB_D__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][3] = deriv1_aB_D__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][4] = deriv1_aB_D__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][5] = deriv1_aB_D__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][6] = deriv1_aB_D__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[2][2][7][7] = deriv1_aB_D__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[3][0][2][1] = deriv1_aB_F__0__D__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][2][2] = deriv1_aB_F__0__D__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][3][0] = deriv1_aB_F__0__F__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][0][3][1] = deriv1_aB_F__0__F__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][3][2] = deriv1_aB_F__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][3][3] = deriv1_aB_F__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][0][4][0] = deriv1_aB_F__0__G__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][0][4][1] = deriv1_aB_F__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][4][2] = deriv1_aB_F__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][4][3] = deriv1_aB_F__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][0][4][4] = deriv1_aB_F__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][0] = deriv1_aB_F__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][1] = deriv1_aB_F__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][2] = deriv1_aB_F__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][3] = deriv1_aB_F__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][4] = deriv1_aB_F__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][0][5][5] = deriv1_aB_F__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][0] = deriv1_aB_F__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][1] = deriv1_aB_F__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][2] = deriv1_aB_F__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][3] = deriv1_aB_F__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][4] = deriv1_aB_F__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][5] = deriv1_aB_F__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][0][6][6] = deriv1_aB_F__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][0] = deriv1_aB_F__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][1] = deriv1_aB_F__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][2] = deriv1_aB_F__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][3] = deriv1_aB_F__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][4] = deriv1_aB_F__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][5] = deriv1_aB_F__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][6] = deriv1_aB_F__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][0][7][7] = deriv1_aB_F__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[3][1][2][2] = deriv1_aB_F__0__D__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][3][1] = deriv1_aB_F__0__F__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][1][3][2] = deriv1_aB_F__0__F__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][3][3] = deriv1_aB_F__0__F__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][1][4][0] = deriv1_aB_F__0__G__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][1][4][1] = deriv1_aB_F__0__G__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][1][4][2] = deriv1_aB_F__0__G__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][4][3] = deriv1_aB_F__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][1][4][4] = deriv1_aB_F__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][0] = deriv1_aB_F__0__H__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][1] = deriv1_aB_F__0__H__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][2] = deriv1_aB_F__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][3] = deriv1_aB_F__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][4] = deriv1_aB_F__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][1][5][5] = deriv1_aB_F__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][0] = deriv1_aB_F__0__I__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][1] = deriv1_aB_F__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][2] = deriv1_aB_F__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][3] = deriv1_aB_F__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][4] = deriv1_aB_F__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][5] = deriv1_aB_F__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][1][6][6] = deriv1_aB_F__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][0] = deriv1_aB_F__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][1] = deriv1_aB_F__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][2] = deriv1_aB_F__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][3] = deriv1_aB_F__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][4] = deriv1_aB_F__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][5] = deriv1_aB_F__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][6] = deriv1_aB_F__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][1][7][7] = deriv1_aB_F__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[3][2][3][2] = deriv1_aB_F__0__F__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][2][3][3] = deriv1_aB_F__0__F__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][2][4][1] = deriv1_aB_F__0__G__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][2][4][2] = deriv1_aB_F__0__G__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][2][4][3] = deriv1_aB_F__0__G__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][2][4][4] = deriv1_aB_F__0__G__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][0] = deriv1_aB_F__0__H__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][1] = deriv1_aB_F__0__H__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][2] = deriv1_aB_F__0__H__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][3] = deriv1_aB_F__0__H__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][4] = deriv1_aB_F__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][2][5][5] = deriv1_aB_F__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][0] = deriv1_aB_F__0__I__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][1] = deriv1_aB_F__0__I__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][2] = deriv1_aB_F__0__I__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][3] = deriv1_aB_F__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][4] = deriv1_aB_F__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][5] = deriv1_aB_F__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][2][6][6] = deriv1_aB_F__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][0] = deriv1_aB_F__0__K__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][1] = deriv1_aB_F__0__K__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][2] = deriv1_aB_F__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][3] = deriv1_aB_F__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][4] = deriv1_aB_F__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][5] = deriv1_aB_F__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][6] = deriv1_aB_F__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][2][7][7] = deriv1_aB_F__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[3][3][3][3] = deriv1_aB_F__0__F__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][3][4][2] = deriv1_aB_F__0__G__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][3][4][3] = deriv1_aB_F__0__G__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][3][4][4] = deriv1_aB_F__0__G__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][3][5][1] = deriv1_aB_F__0__H__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][3][5][2] = deriv1_aB_F__0__H__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][3][5][3] = deriv1_aB_F__0__H__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][3][5][4] = deriv1_aB_F__0__H__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][3][5][5] = deriv1_aB_F__0__H__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][0] = deriv1_aB_F__0__I__1___TwoPRep_F__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][1] = deriv1_aB_F__0__I__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][2] = deriv1_aB_F__0__I__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][3] = deriv1_aB_F__0__I__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][4] = deriv1_aB_F__0__I__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][5] = deriv1_aB_F__0__I__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][3][6][6] = deriv1_aB_F__0__I__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][0] = deriv1_aB_F__0__K__1___TwoPRep_F__0__S__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][1] = deriv1_aB_F__0__K__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][2] = deriv1_aB_F__0__K__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][3] = deriv1_aB_F__0__K__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][4] = deriv1_aB_F__0__K__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][5] = deriv1_aB_F__0__K__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][6] = deriv1_aB_F__0__K__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[3][3][7][7] = deriv1_aB_F__0__K__1___TwoPRep_F__0__K__1___Ab__up_0;
+
+libint2_build_eri1[4][0][2][2] = deriv1_aB_G__0__D__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][3][1] = deriv1_aB_G__0__F__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][0][3][2] = deriv1_aB_G__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][3][3] = deriv1_aB_G__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][0][4][0] = deriv1_aB_G__0__G__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][0][4][1] = deriv1_aB_G__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][0][4][2] = deriv1_aB_G__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][4][3] = deriv1_aB_G__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][0][4][4] = deriv1_aB_G__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][0] = deriv1_aB_G__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][1] = deriv1_aB_G__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][2] = deriv1_aB_G__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][3] = deriv1_aB_G__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][4] = deriv1_aB_G__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][0][5][5] = deriv1_aB_G__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][0] = deriv1_aB_G__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][1] = deriv1_aB_G__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][2] = deriv1_aB_G__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][3] = deriv1_aB_G__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][4] = deriv1_aB_G__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][5] = deriv1_aB_G__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][0][6][6] = deriv1_aB_G__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][0] = deriv1_aB_G__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][1] = deriv1_aB_G__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][2] = deriv1_aB_G__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][3] = deriv1_aB_G__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][4] = deriv1_aB_G__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][5] = deriv1_aB_G__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][6] = deriv1_aB_G__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][0][7][7] = deriv1_aB_G__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[4][1][3][2] = deriv1_aB_G__0__F__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][1][3][3] = deriv1_aB_G__0__F__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][1][4][1] = deriv1_aB_G__0__G__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][1][4][2] = deriv1_aB_G__0__G__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][1][4][3] = deriv1_aB_G__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][1][4][4] = deriv1_aB_G__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][0] = deriv1_aB_G__0__H__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][1] = deriv1_aB_G__0__H__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][2] = deriv1_aB_G__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][3] = deriv1_aB_G__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][4] = deriv1_aB_G__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][1][5][5] = deriv1_aB_G__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][0] = deriv1_aB_G__0__I__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][1] = deriv1_aB_G__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][2] = deriv1_aB_G__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][3] = deriv1_aB_G__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][4] = deriv1_aB_G__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][5] = deriv1_aB_G__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][1][6][6] = deriv1_aB_G__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][0] = deriv1_aB_G__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][1] = deriv1_aB_G__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][2] = deriv1_aB_G__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][3] = deriv1_aB_G__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][4] = deriv1_aB_G__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][5] = deriv1_aB_G__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][6] = deriv1_aB_G__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][1][7][7] = deriv1_aB_G__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[4][2][3][3] = deriv1_aB_G__0__F__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][2][4][2] = deriv1_aB_G__0__G__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][2][4][3] = deriv1_aB_G__0__G__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][2][4][4] = deriv1_aB_G__0__G__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][2][5][1] = deriv1_aB_G__0__H__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][2][5][2] = deriv1_aB_G__0__H__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][2][5][3] = deriv1_aB_G__0__H__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][2][5][4] = deriv1_aB_G__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][2][5][5] = deriv1_aB_G__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][0] = deriv1_aB_G__0__I__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][1] = deriv1_aB_G__0__I__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][2] = deriv1_aB_G__0__I__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][3] = deriv1_aB_G__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][4] = deriv1_aB_G__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][5] = deriv1_aB_G__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][2][6][6] = deriv1_aB_G__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][0] = deriv1_aB_G__0__K__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][1] = deriv1_aB_G__0__K__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][2] = deriv1_aB_G__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][3] = deriv1_aB_G__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][4] = deriv1_aB_G__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][5] = deriv1_aB_G__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][6] = deriv1_aB_G__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][2][7][7] = deriv1_aB_G__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[4][3][4][3] = deriv1_aB_G__0__G__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][3][4][4] = deriv1_aB_G__0__G__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][3][5][2] = deriv1_aB_G__0__H__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][3][5][3] = deriv1_aB_G__0__H__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][3][5][4] = deriv1_aB_G__0__H__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][3][5][5] = deriv1_aB_G__0__H__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][1] = deriv1_aB_G__0__I__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][2] = deriv1_aB_G__0__I__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][3] = deriv1_aB_G__0__I__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][4] = deriv1_aB_G__0__I__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][5] = deriv1_aB_G__0__I__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][3][6][6] = deriv1_aB_G__0__I__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][0] = deriv1_aB_G__0__K__1___TwoPRep_F__0__S__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][1] = deriv1_aB_G__0__K__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][2] = deriv1_aB_G__0__K__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][3] = deriv1_aB_G__0__K__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][4] = deriv1_aB_G__0__K__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][5] = deriv1_aB_G__0__K__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][6] = deriv1_aB_G__0__K__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][3][7][7] = deriv1_aB_G__0__K__1___TwoPRep_F__0__K__1___Ab__up_0;
+
+libint2_build_eri1[4][4][4][4] = deriv1_aB_G__0__G__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][4][5][3] = deriv1_aB_G__0__H__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][4][5][4] = deriv1_aB_G__0__H__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][4][5][5] = deriv1_aB_G__0__H__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][4][6][2] = deriv1_aB_G__0__I__1___TwoPRep_G__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][4][6][3] = deriv1_aB_G__0__I__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][4][6][4] = deriv1_aB_G__0__I__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][4][6][5] = deriv1_aB_G__0__I__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][4][6][6] = deriv1_aB_G__0__I__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][1] = deriv1_aB_G__0__K__1___TwoPRep_G__0__P__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][2] = deriv1_aB_G__0__K__1___TwoPRep_G__0__D__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][3] = deriv1_aB_G__0__K__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][4] = deriv1_aB_G__0__K__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][5] = deriv1_aB_G__0__K__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][6] = deriv1_aB_G__0__K__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[4][4][7][7] = deriv1_aB_G__0__K__1___TwoPRep_G__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][0][3][2] = deriv1_aB_H__0__F__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][0][3][3] = deriv1_aB_H__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][0][4][1] = deriv1_aB_H__0__G__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][0][4][2] = deriv1_aB_H__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][0][4][3] = deriv1_aB_H__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][0][4][4] = deriv1_aB_H__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][0] = deriv1_aB_H__0__H__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][1] = deriv1_aB_H__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][2] = deriv1_aB_H__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][3] = deriv1_aB_H__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][4] = deriv1_aB_H__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][0][5][5] = deriv1_aB_H__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][0] = deriv1_aB_H__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][1] = deriv1_aB_H__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][2] = deriv1_aB_H__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][3] = deriv1_aB_H__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][4] = deriv1_aB_H__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][5] = deriv1_aB_H__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][0][6][6] = deriv1_aB_H__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][0] = deriv1_aB_H__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][1] = deriv1_aB_H__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][2] = deriv1_aB_H__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][3] = deriv1_aB_H__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][4] = deriv1_aB_H__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][5] = deriv1_aB_H__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][6] = deriv1_aB_H__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][0][7][7] = deriv1_aB_H__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][1][3][3] = deriv1_aB_H__0__F__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][1][4][2] = deriv1_aB_H__0__G__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][1][4][3] = deriv1_aB_H__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][1][4][4] = deriv1_aB_H__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][1][5][1] = deriv1_aB_H__0__H__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][1][5][2] = deriv1_aB_H__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][1][5][3] = deriv1_aB_H__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][1][5][4] = deriv1_aB_H__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][1][5][5] = deriv1_aB_H__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][0] = deriv1_aB_H__0__I__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][1] = deriv1_aB_H__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][2] = deriv1_aB_H__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][3] = deriv1_aB_H__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][4] = deriv1_aB_H__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][5] = deriv1_aB_H__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][1][6][6] = deriv1_aB_H__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][0] = deriv1_aB_H__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][1] = deriv1_aB_H__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][2] = deriv1_aB_H__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][3] = deriv1_aB_H__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][4] = deriv1_aB_H__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][5] = deriv1_aB_H__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][6] = deriv1_aB_H__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][1][7][7] = deriv1_aB_H__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][2][4][3] = deriv1_aB_H__0__G__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][2][4][4] = deriv1_aB_H__0__G__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][2][5][2] = deriv1_aB_H__0__H__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][2][5][3] = deriv1_aB_H__0__H__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][2][5][4] = deriv1_aB_H__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][2][5][5] = deriv1_aB_H__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][1] = deriv1_aB_H__0__I__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][2] = deriv1_aB_H__0__I__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][3] = deriv1_aB_H__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][4] = deriv1_aB_H__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][5] = deriv1_aB_H__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][2][6][6] = deriv1_aB_H__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][0] = deriv1_aB_H__0__K__1___TwoPRep_D__0__S__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][1] = deriv1_aB_H__0__K__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][2] = deriv1_aB_H__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][3] = deriv1_aB_H__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][4] = deriv1_aB_H__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][5] = deriv1_aB_H__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][6] = deriv1_aB_H__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][2][7][7] = deriv1_aB_H__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][3][4][4] = deriv1_aB_H__0__G__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][3][5][3] = deriv1_aB_H__0__H__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][3][5][4] = deriv1_aB_H__0__H__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][3][5][5] = deriv1_aB_H__0__H__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][3][6][2] = deriv1_aB_H__0__I__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][3][6][3] = deriv1_aB_H__0__I__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][3][6][4] = deriv1_aB_H__0__I__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][3][6][5] = deriv1_aB_H__0__I__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][3][6][6] = deriv1_aB_H__0__I__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][1] = deriv1_aB_H__0__K__1___TwoPRep_F__0__P__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][2] = deriv1_aB_H__0__K__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][3] = deriv1_aB_H__0__K__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][4] = deriv1_aB_H__0__K__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][5] = deriv1_aB_H__0__K__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][6] = deriv1_aB_H__0__K__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][3][7][7] = deriv1_aB_H__0__K__1___TwoPRep_F__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][4][5][4] = deriv1_aB_H__0__H__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][4][5][5] = deriv1_aB_H__0__H__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][4][6][3] = deriv1_aB_H__0__I__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][4][6][4] = deriv1_aB_H__0__I__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][4][6][5] = deriv1_aB_H__0__I__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][4][6][6] = deriv1_aB_H__0__I__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][2] = deriv1_aB_H__0__K__1___TwoPRep_G__0__D__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][3] = deriv1_aB_H__0__K__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][4] = deriv1_aB_H__0__K__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][5] = deriv1_aB_H__0__K__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][6] = deriv1_aB_H__0__K__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][4][7][7] = deriv1_aB_H__0__K__1___TwoPRep_G__0__K__1___Ab__up_0;
+
+libint2_build_eri1[5][5][5][5] = deriv1_aB_H__0__H__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][5][6][4] = deriv1_aB_H__0__I__1___TwoPRep_H__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][5][6][5] = deriv1_aB_H__0__I__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][5][6][6] = deriv1_aB_H__0__I__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][5][7][3] = deriv1_aB_H__0__K__1___TwoPRep_H__0__F__1___Ab__up_0;
+
+libint2_build_eri1[5][5][7][4] = deriv1_aB_H__0__K__1___TwoPRep_H__0__G__1___Ab__up_0;
+
+libint2_build_eri1[5][5][7][5] = deriv1_aB_H__0__K__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[5][5][7][6] = deriv1_aB_H__0__K__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[5][5][7][7] = deriv1_aB_H__0__K__1___TwoPRep_H__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][0][3][3] = deriv1_aB_I__0__F__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][0][4][2] = deriv1_aB_I__0__G__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][0][4][3] = deriv1_aB_I__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][0][4][4] = deriv1_aB_I__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][0][5][1] = deriv1_aB_I__0__H__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][0][5][2] = deriv1_aB_I__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][0][5][3] = deriv1_aB_I__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][0][5][4] = deriv1_aB_I__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][0][5][5] = deriv1_aB_I__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][0] = deriv1_aB_I__0__I__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][1] = deriv1_aB_I__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][2] = deriv1_aB_I__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][3] = deriv1_aB_I__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][4] = deriv1_aB_I__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][5] = deriv1_aB_I__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][0][6][6] = deriv1_aB_I__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][0] = deriv1_aB_I__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][1] = deriv1_aB_I__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][2] = deriv1_aB_I__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][3] = deriv1_aB_I__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][4] = deriv1_aB_I__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][5] = deriv1_aB_I__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][6] = deriv1_aB_I__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][0][7][7] = deriv1_aB_I__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][1][4][3] = deriv1_aB_I__0__G__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][1][4][4] = deriv1_aB_I__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][1][5][2] = deriv1_aB_I__0__H__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][1][5][3] = deriv1_aB_I__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][1][5][4] = deriv1_aB_I__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][1][5][5] = deriv1_aB_I__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][1] = deriv1_aB_I__0__I__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][2] = deriv1_aB_I__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][3] = deriv1_aB_I__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][4] = deriv1_aB_I__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][5] = deriv1_aB_I__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][1][6][6] = deriv1_aB_I__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][0] = deriv1_aB_I__0__K__1___TwoPRep_P__0__S__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][1] = deriv1_aB_I__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][2] = deriv1_aB_I__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][3] = deriv1_aB_I__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][4] = deriv1_aB_I__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][5] = deriv1_aB_I__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][6] = deriv1_aB_I__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][1][7][7] = deriv1_aB_I__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][2][4][4] = deriv1_aB_I__0__G__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][2][5][3] = deriv1_aB_I__0__H__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][2][5][4] = deriv1_aB_I__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][2][5][5] = deriv1_aB_I__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][2][6][2] = deriv1_aB_I__0__I__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][2][6][3] = deriv1_aB_I__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][2][6][4] = deriv1_aB_I__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][2][6][5] = deriv1_aB_I__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][2][6][6] = deriv1_aB_I__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][1] = deriv1_aB_I__0__K__1___TwoPRep_D__0__P__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][2] = deriv1_aB_I__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][3] = deriv1_aB_I__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][4] = deriv1_aB_I__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][5] = deriv1_aB_I__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][6] = deriv1_aB_I__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][2][7][7] = deriv1_aB_I__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][3][5][4] = deriv1_aB_I__0__H__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][3][5][5] = deriv1_aB_I__0__H__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][3][6][3] = deriv1_aB_I__0__I__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][3][6][4] = deriv1_aB_I__0__I__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][3][6][5] = deriv1_aB_I__0__I__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][3][6][6] = deriv1_aB_I__0__I__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][2] = deriv1_aB_I__0__K__1___TwoPRep_F__0__D__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][3] = deriv1_aB_I__0__K__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][4] = deriv1_aB_I__0__K__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][5] = deriv1_aB_I__0__K__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][6] = deriv1_aB_I__0__K__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][3][7][7] = deriv1_aB_I__0__K__1___TwoPRep_F__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][4][5][5] = deriv1_aB_I__0__H__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][4][6][4] = deriv1_aB_I__0__I__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][4][6][5] = deriv1_aB_I__0__I__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][4][6][6] = deriv1_aB_I__0__I__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][4][7][3] = deriv1_aB_I__0__K__1___TwoPRep_G__0__F__1___Ab__up_0;
+
+libint2_build_eri1[6][4][7][4] = deriv1_aB_I__0__K__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][4][7][5] = deriv1_aB_I__0__K__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][4][7][6] = deriv1_aB_I__0__K__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][4][7][7] = deriv1_aB_I__0__K__1___TwoPRep_G__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][5][6][5] = deriv1_aB_I__0__I__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][5][6][6] = deriv1_aB_I__0__I__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][5][7][4] = deriv1_aB_I__0__K__1___TwoPRep_H__0__G__1___Ab__up_0;
+
+libint2_build_eri1[6][5][7][5] = deriv1_aB_I__0__K__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][5][7][6] = deriv1_aB_I__0__K__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][5][7][7] = deriv1_aB_I__0__K__1___TwoPRep_H__0__K__1___Ab__up_0;
+
+libint2_build_eri1[6][6][6][6] = deriv1_aB_I__0__I__1___TwoPRep_I__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][6][7][5] = deriv1_aB_I__0__K__1___TwoPRep_I__0__H__1___Ab__up_0;
+
+libint2_build_eri1[6][6][7][6] = deriv1_aB_I__0__K__1___TwoPRep_I__0__I__1___Ab__up_0;
+
+libint2_build_eri1[6][6][7][7] = deriv1_aB_I__0__K__1___TwoPRep_I__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][0][4][3] = deriv1_aB_K__0__G__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][0][4][4] = deriv1_aB_K__0__G__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][0][5][2] = deriv1_aB_K__0__H__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][0][5][3] = deriv1_aB_K__0__H__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][0][5][4] = deriv1_aB_K__0__H__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][0][5][5] = deriv1_aB_K__0__H__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][1] = deriv1_aB_K__0__I__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][2] = deriv1_aB_K__0__I__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][3] = deriv1_aB_K__0__I__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][4] = deriv1_aB_K__0__I__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][5] = deriv1_aB_K__0__I__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][0][6][6] = deriv1_aB_K__0__I__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][0] = deriv1_aB_K__0__K__1___TwoPRep_S__0__S__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][1] = deriv1_aB_K__0__K__1___TwoPRep_S__0__P__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][2] = deriv1_aB_K__0__K__1___TwoPRep_S__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][3] = deriv1_aB_K__0__K__1___TwoPRep_S__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][4] = deriv1_aB_K__0__K__1___TwoPRep_S__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][5] = deriv1_aB_K__0__K__1___TwoPRep_S__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][6] = deriv1_aB_K__0__K__1___TwoPRep_S__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][0][7][7] = deriv1_aB_K__0__K__1___TwoPRep_S__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][1][4][4] = deriv1_aB_K__0__G__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][1][5][3] = deriv1_aB_K__0__H__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][1][5][4] = deriv1_aB_K__0__H__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][1][5][5] = deriv1_aB_K__0__H__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][1][6][2] = deriv1_aB_K__0__I__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][1][6][3] = deriv1_aB_K__0__I__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][1][6][4] = deriv1_aB_K__0__I__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][1][6][5] = deriv1_aB_K__0__I__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][1][6][6] = deriv1_aB_K__0__I__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][1] = deriv1_aB_K__0__K__1___TwoPRep_P__0__P__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][2] = deriv1_aB_K__0__K__1___TwoPRep_P__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][3] = deriv1_aB_K__0__K__1___TwoPRep_P__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][4] = deriv1_aB_K__0__K__1___TwoPRep_P__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][5] = deriv1_aB_K__0__K__1___TwoPRep_P__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][6] = deriv1_aB_K__0__K__1___TwoPRep_P__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][1][7][7] = deriv1_aB_K__0__K__1___TwoPRep_P__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][2][5][4] = deriv1_aB_K__0__H__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][2][5][5] = deriv1_aB_K__0__H__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][2][6][3] = deriv1_aB_K__0__I__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][2][6][4] = deriv1_aB_K__0__I__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][2][6][5] = deriv1_aB_K__0__I__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][2][6][6] = deriv1_aB_K__0__I__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][2] = deriv1_aB_K__0__K__1___TwoPRep_D__0__D__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][3] = deriv1_aB_K__0__K__1___TwoPRep_D__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][4] = deriv1_aB_K__0__K__1___TwoPRep_D__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][5] = deriv1_aB_K__0__K__1___TwoPRep_D__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][6] = deriv1_aB_K__0__K__1___TwoPRep_D__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][2][7][7] = deriv1_aB_K__0__K__1___TwoPRep_D__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][3][5][5] = deriv1_aB_K__0__H__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][3][6][4] = deriv1_aB_K__0__I__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][3][6][5] = deriv1_aB_K__0__I__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][3][6][6] = deriv1_aB_K__0__I__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][3][7][3] = deriv1_aB_K__0__K__1___TwoPRep_F__0__F__1___Ab__up_0;
+
+libint2_build_eri1[7][3][7][4] = deriv1_aB_K__0__K__1___TwoPRep_F__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][3][7][5] = deriv1_aB_K__0__K__1___TwoPRep_F__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][3][7][6] = deriv1_aB_K__0__K__1___TwoPRep_F__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][3][7][7] = deriv1_aB_K__0__K__1___TwoPRep_F__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][4][6][5] = deriv1_aB_K__0__I__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][4][6][6] = deriv1_aB_K__0__I__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][4][7][4] = deriv1_aB_K__0__K__1___TwoPRep_G__0__G__1___Ab__up_0;
+
+libint2_build_eri1[7][4][7][5] = deriv1_aB_K__0__K__1___TwoPRep_G__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][4][7][6] = deriv1_aB_K__0__K__1___TwoPRep_G__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][4][7][7] = deriv1_aB_K__0__K__1___TwoPRep_G__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][5][6][6] = deriv1_aB_K__0__I__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][5][7][5] = deriv1_aB_K__0__K__1___TwoPRep_H__0__H__1___Ab__up_0;
+
+libint2_build_eri1[7][5][7][6] = deriv1_aB_K__0__K__1___TwoPRep_H__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][5][7][7] = deriv1_aB_K__0__K__1___TwoPRep_H__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][6][7][6] = deriv1_aB_K__0__K__1___TwoPRep_I__0__I__1___Ab__up_0;
+
+libint2_build_eri1[7][6][7][7] = deriv1_aB_K__0__K__1___TwoPRep_I__0__K__1___Ab__up_0;
+
+libint2_build_eri1[7][7][7][7] = deriv1_aB_K__0__K__1___TwoPRep_K__0__K__1___Ab__up_0;
 
 libint2_build_3eri[0][0][0] = eri3_aB_S__0__S__1___TwoPRep_unit__0__S__1___Ab__up_0;
 

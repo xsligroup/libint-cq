@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -24,6 +24,7 @@
 #if !LIBINT2_CONSTEXPR_STATICS
 #define LIBINT2_STATICS_INITIALIZATION
 #include <libint2/boys_cheb7.h>
+#include <libint2/tenno_cheb.h>
 #endif  // !LIBINT2_CONSTEXPR_STATICS
 
 #endif /* _libint2_src_lib_libint_statics_definition_h_ */

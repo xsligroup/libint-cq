@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -20,7 +20,6 @@
 
 #include <libint2.h>
 #include <GenericContract.h>
-#include <OSVRRP1InBra_aB_s__0__p__1___TwoPRep_unit__0__s__1___Ab__up_0.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,15 +33,40 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-OSVRRP1InBra_aB_s__0__p__1___TwoPRep_unit__0__s__1___Ab__up_0(inteval, &(stack[((hsi*3+3)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[vi]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(stack[((hsi*3+3)*1+lsi)*1]),3);
+LIBINT2_REALTYPE fp4;
+fp4 = inteval->WQ_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp5;
+fp5 = inteval->QC_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[vi];
+LIBINT2_REALTYPE fp3;
+fp3 = fp5 + fp4;
+LIBINT2_REALTYPE fp2;
+fp2 = fp3;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+2)*1+lsi)*1]),&(fp2),1);
+LIBINT2_REALTYPE fp7;
+fp7 = inteval->WQ_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp8;
+fp8 = inteval->QC_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[vi];
+LIBINT2_REALTYPE fp6;
+fp6 = fp8 + fp7;
+LIBINT2_REALTYPE fp1;
+fp1 = fp6;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+1)*1+lsi)*1]),&(fp1),1);
+LIBINT2_REALTYPE fp10;
+fp10 = inteval->WQ_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp11;
+fp11 = inteval->QC_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[vi];
+LIBINT2_REALTYPE fp9;
+fp9 = fp11 + fp10;
+LIBINT2_REALTYPE fp0;
+fp0 = fp9;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(fp0),1);
 }
 }
 }
 const int hsi = 0;
 const int lsi = 0;
 const int vi = 0;
-/** Number of flops = 3 */
+/** Number of flops = 12 */
 }
 
 #ifdef __cplusplus

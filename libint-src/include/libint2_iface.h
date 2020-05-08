@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -37,7 +37,15 @@ extern void (*libint2_build_1emultipole[8][8])(const Libint_t*);
 extern void (*libint2_build_2emultipole[8][8])(const Libint_t*);
 extern void (*libint2_build_3emultipole[8][8])(const Libint_t*);
 extern void (*libint2_build_sphemultipole[8][8])(const Libint_t*);
+extern void (*libint2_build_overlap1[8][8])(const Libint_t*);
+extern void (*libint2_build_kinetic1[8][8])(const Libint_t*);
+extern void (*libint2_build_elecpot1[8][8])(const Libint_t*);
+extern void (*libint2_build_1emultipole1[8][8])(const Libint_t*);
+extern void (*libint2_build_2emultipole1[8][8])(const Libint_t*);
+extern void (*libint2_build_3emultipole1[8][8])(const Libint_t*);
+extern void (*libint2_build_sphemultipole1[8][8])(const Libint_t*);
 extern void (*libint2_build_eri[8][8][8][8])(const Libint_t*);
+extern void (*libint2_build_eri1[8][8][8][8])(const Libint_t*);
 extern void (*libint2_build_3eri[8][8][8])(const Libint_t*);
 extern void (*libint2_build_2eri[8][8])(const Libint_t*);
 void libint2_static_init();
@@ -66,9 +74,33 @@ void libint2_cleanup_3emultipole(Libint_t* inteval);
 void libint2_init_sphemultipole(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_sphemultipole(int max_am);
 void libint2_cleanup_sphemultipole(Libint_t* inteval);
+void libint2_init_overlap1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_overlap1(int max_am);
+void libint2_cleanup_overlap1(Libint_t* inteval);
+void libint2_init_kinetic1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_kinetic1(int max_am);
+void libint2_cleanup_kinetic1(Libint_t* inteval);
+void libint2_init_elecpot1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_elecpot1(int max_am);
+void libint2_cleanup_elecpot1(Libint_t* inteval);
+void libint2_init_1emultipole1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_1emultipole1(int max_am);
+void libint2_cleanup_1emultipole1(Libint_t* inteval);
+void libint2_init_2emultipole1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_2emultipole1(int max_am);
+void libint2_cleanup_2emultipole1(Libint_t* inteval);
+void libint2_init_3emultipole1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_3emultipole1(int max_am);
+void libint2_cleanup_3emultipole1(Libint_t* inteval);
+void libint2_init_sphemultipole1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_sphemultipole1(int max_am);
+void libint2_cleanup_sphemultipole1(Libint_t* inteval);
 void libint2_init_eri(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_eri(int max_am);
 void libint2_cleanup_eri(Libint_t* inteval);
+void libint2_init_eri1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_eri1(int max_am);
+void libint2_cleanup_eri1(Libint_t* inteval);
 void libint2_init_3eri(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_3eri(int max_am);
 void libint2_cleanup_3eri(Libint_t* inteval);

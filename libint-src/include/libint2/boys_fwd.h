@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -34,6 +34,9 @@ namespace libint2 {
 
   template<typename Real, int INTERPOLATION_ORDER>
   class FmEval_Taylor;
+
+  template<typename Real>
+  struct TennoGmEval;
 
   template<typename Real, int K>
     struct GaussianGmEval;

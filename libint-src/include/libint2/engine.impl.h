@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -31,17 +31,10 @@
 #pragma GCC diagnostic pop
 
 #include <libint2/boys.h>
-// use libint-bundled preprocessor only if Boost.Preprocessor version 1.57 or later not already available
-#if __has_include(<boost/version.hpp>) && __has_include(<boost/preprocessor.hpp>)
-#  include <boost/version.hpp>  // read in version and do version check
-#  if defined(BOOST_VERSION)
-#    if (BOOST_VERSION / 100000 == 1) && ((BOOST_VERSION / 100 % 1000) >= 57)
-#      include <boost/preprocessor.hpp>
-#      include <boost/preprocessor/facilities/is_1.hpp>
-#    endif  // boost version > 1.57
-#  endif  // defined(BOOST_VERSION)
-#endif  // found system boost/preprocessor.hpp
-#if !defined(BOOST_PREPROCESSOR_HPP)  // if preprocessor.hpp not yet included, use the bundled copy
+#if LIBINT_HAS_SYSTEM_BOOST_PREPROCESSOR_VARIADICS
+# include <boost/preprocessor.hpp>
+# include <boost/preprocessor/facilities/is_1.hpp>
+#else  // use bundled boost
 #  include <libint2/boost/preprocessor.hpp>
 #  include <libint2/boost/preprocessor/facilities/is_1.hpp>
 #endif
@@ -86,7 +79,7 @@ typename std::remove_all_extents<T>::type* to_ptr1(T (&a)[N]) {
         (2emultipole,                \
          (3emultipole,               \
            (sphemultipole,           \
-          (eri, (eri, (eri, (eri, (eri, (eri, (eri, (eri, BOOST_PP_NIL)))))))))))))))))
+          (eri, (eri, (eri, (eri, (eri, (eri, (eri, (eri, (eri, (eri, BOOST_PP_NIL)))))))))))))))))))
 
 #define BOOST_PP_NBODY_OPERATOR_INDEX_TUPLE \
   BOOST_PP_MAKE_TUPLE(BOOST_PP_LIST_SIZE(BOOST_PP_NBODY_OPERATOR_LIST))
@@ -1001,7 +994,7 @@ __libint2_engine_inline void Engine::compute_primdata(Libint_t& primdata, const 
 
   decltype(c1) sqrt_PI(1.77245385090551602729816748334);
   const auto xyz_pfac = sqrt_PI * sqrt(oogammap);
-  const auto ovlp_ss_x = exp(-rhop * AB2_x) * xyz_pfac * c1 * c2;
+  const auto ovlp_ss_x = exp(-rhop * AB2_x) * xyz_pfac * c1 * c2 * scale_;
   const auto ovlp_ss_y = exp(-rhop * AB2_y) * xyz_pfac;
   const auto ovlp_ss_z = exp(-rhop * AB2_z) * xyz_pfac;
 
@@ -1094,13 +1087,13 @@ __libint2_engine_inline void Engine::compute_primdata(Libint_t& primdata, const 
 /// \note result is stored in the "chemists"/Mulliken form, (tbra1 tbra2 |tket1
 /// tket2), i.e. bra and ket are in chemists meaning; result is packed in
 /// row-major order.
-template <Operator oper, BraKet braket, size_t deriv_order>
+template <Operator op, BraKet bk, size_t deriv_order>
 __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
     const libint2::Shell& tbra1, const libint2::Shell& tbra2,
     const libint2::Shell& tket1, const libint2::Shell& tket2,
     const ShellPair* tspbra, const ShellPair* tspket) {
-  assert(oper == oper_ && "Engine::compute2 -- operator mismatch");
-  assert(braket == braket_ && "Engine::compute2 -- braket mismatch");
+  assert(op == oper_ && "Engine::compute2 -- operator mismatch");
+  assert(bk == braket_ && "Engine::compute2 -- braket mismatch");
   assert(deriv_order == deriv_order_ &&
          "Engine::compute2 -- deriv_order mismatch");
   assert(((tspbra == nullptr && tspket == nullptr) || (tspbra != nullptr && tspket != nullptr)) &&
@@ -1125,16 +1118,16 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
   const auto swap_tbra = (tbra1.contr[0].l < tbra2.contr[0].l);
   const auto swap_tket = (tket1.contr[0].l < tket2.contr[0].l);
   const auto swap_braket =
-      ((braket == BraKet::xx_xx) && (tbra1.contr[0].l + tbra2.contr[0].l >
+      ((braket_ == BraKet::xx_xx) && (tbra1.contr[0].l + tbra2.contr[0].l >
                                      tket1.contr[0].l + tket2.contr[0].l)) ||
-      braket == BraKet::xx_xs;
+        braket_ == BraKet::xx_xs;
 #else  // orca angular momentum ordering
   const auto swap_tbra = (tbra1.contr[0].l > tbra2.contr[0].l);
   const auto swap_tket = (tket1.contr[0].l > tket2.contr[0].l);
   const auto swap_braket =
-      ((braket == BraKet::xx_xx) && (tbra1.contr[0].l + tbra2.contr[0].l <
+      ((braket_ == BraKet::xx_xx) && (tbra1.contr[0].l + tbra2.contr[0].l <
                                      tket1.contr[0].l + tket2.contr[0].l)) ||
-      braket == BraKet::xx_xs;
+        braket_ == BraKet::xx_xs;
   assert(false && "feature not implemented");
 #endif
   const auto& bra1 =
@@ -1275,7 +1268,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
           const auto sqrt_gammapq = sqrt(gammapq);
           const auto oogammapq = 1.0 / (gammapq);
           auto pfac = two_times_M_PI_to_25 * K12 * sqrt_gammapq * oogammapq;
-          pfac *= c0 * c1 * c2 * c3;
+          pfac *= c0 * c1 * c2 * c3 * scale_;
 
           if (std::abs(pfac) >= precision_) {
             const scalar_type rho = gammap * gammaq * oogammapq;
@@ -1284,7 +1277,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
             const auto mmax = amtot + deriv_order;
 
             if (!skip_core_ints) {
-              switch (oper) {
+              switch (oper_) {
                 case Operator::coulomb: {
                   const auto& core_eval_ptr =
                       any_cast<const detail::core_eval_pack_type<Operator::coulomb>&>(core_eval_pack_)
@@ -1353,6 +1346,26 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
                           Operator::erfc_coulomb>::oper_params_type&>(core_ints_params_);
                   core_eval_ptr->eval(gm_ptr, rho, T, mmax, core_ints_params);
                 } break;
+                case Operator::stg: {
+                  const auto& core_eval_ptr =
+                      any_cast<const detail::core_eval_pack_type<Operator::stg>&>(core_eval_pack_)
+                          .first();
+                  auto zeta =
+                      any_cast<const typename operator_traits<
+                          Operator::stg>::oper_params_type&>(core_ints_params_);
+                  const auto one_over_rho = gammapq * oogammap * oogammaq;
+                  core_eval_ptr->eval_slater(gm_ptr, one_over_rho, T, mmax, zeta);
+                } break;
+                case Operator::stg_x_coulomb: {
+                  const auto& core_eval_ptr =
+                      any_cast<const detail::core_eval_pack_type<Operator::stg>&>(core_eval_pack_)
+                          .first();
+                  auto zeta =
+                      any_cast<const typename operator_traits<
+                          Operator::stg>::oper_params_type&>(core_ints_params_);
+                  const auto one_over_rho = gammapq * oogammap * oogammaq;
+                  core_eval_ptr->eval_yukawa(gm_ptr, one_over_rho, T, mmax, zeta);
+                } break;
                 default:
                   assert(false && "missing case in a switch");  // unreachable
               }
@@ -1363,7 +1376,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
             }
 
             if (mmax != 0) {
-              if (braket == BraKet::xx_xx) {
+              if (braket_ == BraKet::xx_xx) {
 #if LIBINT2_DEFINED(eri, PA_x)
                 primdata.PA_x[0] = P[0] - A[0];
 #endif
@@ -1384,7 +1397,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
 #endif
               }
 
-              if (braket != BraKet::xs_xs) {
+              if (braket_ != BraKet::xs_xs) {
 #if LIBINT2_DEFINED(eri, QC_x)
                 primdata.QC_x[0] = Q[0] - C[0];
 #endif
@@ -1405,7 +1418,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
 #endif
               }
 
-              if (braket == BraKet::xx_xx) {
+              if (braket_ == BraKet::xx_xx) {
 #if LIBINT2_DEFINED(eri, AB_x)
                 primdata.AB_x[0] = AB[0];
 #endif
@@ -1426,7 +1439,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
 #endif
               }
 
-              if (braket != BraKet::xs_xs) {
+              if (braket_ != BraKet::xs_xs) {
 #if LIBINT2_DEFINED(eri, CD_x)
                 primdata.CD_x[0] = CD[0];
 #endif
@@ -1663,7 +1676,7 @@ __libint2_engine_inline const Engine::target_ptr_vec& Engine::compute2(
 #endif
 
     size_t buildfnidx;
-    switch (braket) {
+    switch (braket_) {
       case BraKet::xx_xx:
         buildfnidx =
             ((bra1.contr[0].l * hard_lmax_ + bra2.contr[0].l) * hard_lmax_ +

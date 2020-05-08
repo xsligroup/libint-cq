@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -35,6 +35,7 @@
 #include <algorithm>
 #include <array>
 #include <cstring>
+#include <cstdio>
 #include <functional>
 #include <iostream>
 #include <limits>
@@ -148,26 +149,33 @@ enum class Operator {
   /// erfc-attenuated Coulomb operator,
   /// \f$ \mathrm{erfc}(\omega r)/r \f$
   erfc_coulomb,
+  /// Slater-type geminal, \f$ \mathrm{exp}(-\zeta r_{12}) \f$
+  stg,
+  /// Slater-type geminal times Coulomb, , \f$ \mathrm{exp}(-\zeta r_{12}) / r_{12} \f$
+  stg_x_coulomb,
+  /// alias for Operator::stg_x_coulomb
+  yukawa = stg_x_coulomb,
   // do not modify this
   invalid = -1,
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!keep this updated!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   first_1body_oper = overlap,
   last_1body_oper = sphemultipole,
   first_2body_oper = delta,
-  last_2body_oper = erfc_coulomb,
+  last_2body_oper = stg_x_coulomb,
   first_oper = first_1body_oper,
   last_oper = last_2body_oper
 };
 
+/// @param[in] oper an Operator object
 /// @return the particle rank of \c oper
-inline int rank(Operator oper) {
-  int n = 0;
-  if (oper >= Operator::first_1body_oper && oper <= Operator::last_1body_oper)
-    n = 1;
-  else if (oper >= Operator::first_2body_oper &&
+/// @throw std::logic_error if an invalid @c oper given
+inline constexpr int rank(Operator oper) {
+  return (oper >= Operator::first_1body_oper &&
+          oper <= Operator::last_1body_oper)
+          ? 1 :
+         ((oper >= Operator::first_2body_oper &&
            oper <= Operator::last_2body_oper)
-    n = 2;
-  return n;
+           ? 2 : throw std::logic_error("rank(Operator): invalid operator given"));
 }
 
 namespace detail {
@@ -330,6 +338,30 @@ struct operator_traits<Operator::erfc_coulomb>
       core_eval_type;
 };
 
+template <>
+struct operator_traits<Operator::stg>
+    : public detail::default_operator_traits {
+  /// the attenuation parameter (0 = constant, infinity = delta-function)
+  typedef scalar_type oper_params_type;
+  static oper_params_type default_params() {
+    return oper_params_type{0};
+  }
+  typedef const libint2::TennoGmEval<scalar_type>
+      core_eval_type;
+};
+
+template <>
+struct operator_traits<Operator::stg_x_coulomb>
+    : public detail::default_operator_traits {
+  /// the attenuation parameter (0 = coulomb, infinity = delta-function)
+  typedef scalar_type oper_params_type;
+  static oper_params_type default_params() {
+    return oper_params_type{0};
+  }
+  typedef const libint2::TennoGmEval<scalar_type>
+      core_eval_type;
+};
+
 /// the runtime version of \c operator_traits<oper>::default_params()
 libint2::any
 default_params(const Operator& oper);
@@ -366,42 +398,21 @@ enum class BraKet {
 };
 #define BOOST_PP_NBODY_BRAKET_MAX_INDEX 4
 
-/// @return rank of \c braket
-inline int rank(BraKet braket) {
-  int n = 0;
-  switch (braket) {
-    case BraKet::x_x:
-    case BraKet::xs_xs:
-      n = 2;
-      break;
-    case BraKet::xs_xx:
-    case BraKet::xx_xs:
-      n = 3;
-      break;
-    case BraKet::xx_xx:
-      n = 4;
-      break;
-    default:
-      assert(false && "missing case in switch");
-  }
-  return n;
+/// @param[in] braket a BraKet object
+/// @return rank of @c braket
+/// @throw std::logic_error if invalid @c braket given
+inline constexpr int rank(BraKet braket) {
+  return (braket==BraKet::x_x || braket==BraKet::xs_xs) ? 2 :
+         ((braket==BraKet::xs_xx || braket==BraKet::xx_xs) ? 3 :
+          ((braket==BraKet::xx_xx) ? 4 : throw std::logic_error("rank(BraKet): invalid braket given")));
 }
 
-/// @return the default braket for \c oper
-inline BraKet default_braket(const Operator& oper) {
-  BraKet result;
-  switch (rank(oper)) {
-    case 1: {
-      result = BraKet::x_x;
-    } break;
-    case 2: {
-      result = BraKet::xx_xx;
-    } break;
-    default:
-      assert(false && "missing case in switch");
-      result = BraKet::invalid;
-  }
-  return result;
+/// @param[in] oper an Operator object
+/// @return the default braket for @c oper
+/// @throw std::logic_error if invalid @c oper given
+inline constexpr BraKet default_braket(Operator oper) {
+  return (rank(oper)==1) ? BraKet::x_x :
+         ((rank(oper)==2) ? BraKet::xx_xx : throw std::logic_error("default_braket(Operator): invalid operator given"));
 }
 
 constexpr size_t nopers_2body = static_cast<int>(Operator::last_2body_oper) -
@@ -439,7 +450,8 @@ class Engine {
         stack_size_(0),
         lmax_(-1),
         deriv_order_(0),
-        cartesian_shell_normalization_(CartesianShellNormalization::standard) {
+        cartesian_shell_normalization_(CartesianShellNormalization::standard),
+        scale_(1) {
     set_precision(std::numeric_limits<scalar_type>::epsilon());
   }
 
@@ -489,6 +501,7 @@ class Engine {
         lmax_(max_l),
         deriv_order_(deriv_order),
         cartesian_shell_normalization_(CartesianShellNormalization::standard),
+        scale_(1),
         params_(enforce_params_type(oper, params)) {
     set_precision(precision);
     assert(max_nprim > 0);
@@ -515,6 +528,7 @@ class Engine {
         precision_(other.precision_),
         ln_precision_(other.ln_precision_),
         cartesian_shell_normalization_(other.cartesian_shell_normalization_),
+        scale_(other.scale_),
         core_eval_pack_(std::move(other.core_eval_pack_)),
         params_(std::move(other.params_)),
         core_ints_params_(std::move(other.core_ints_params_)),
@@ -522,7 +536,12 @@ class Engine {
         set_targets_(other.set_targets_),
         scratch_(std::move(other.scratch_)),
         scratch2_(other.scratch2_),
-        buildfnptrs_(other.buildfnptrs_) {}
+        buildfnptrs_(other.buildfnptrs_) {
+    // leave other in an unusable (but valid) state
+    other.oper_ = Operator::invalid;
+    other.braket_ = BraKet::invalid;
+    other.scratch2_ = nullptr;
+  }
 
   /// (deep) copy constructor
   Engine(const Engine& other)
@@ -537,6 +556,7 @@ class Engine {
         precision_(other.precision_),
         ln_precision_(other.ln_precision_),
         cartesian_shell_normalization_(other.cartesian_shell_normalization_),
+        scale_(other.scale_),
         core_eval_pack_(other.core_eval_pack_),
         params_(other.params_),
         core_ints_params_(other.core_ints_params_) {
@@ -560,6 +580,7 @@ class Engine {
     precision_ = other.precision_;
     ln_precision_ = other.ln_precision_;
     cartesian_shell_normalization_ = other.cartesian_shell_normalization_;
+    scale_ = other.scale_;
     core_eval_pack_ = std::move(other.core_eval_pack_);
     params_ = std::move(other.params_);
     core_ints_params_ = std::move(other.core_ints_params_);
@@ -568,6 +589,10 @@ class Engine {
     scratch_ = std::move(other.scratch_);
     scratch2_ = other.scratch2_;
     buildfnptrs_ = other.buildfnptrs_;
+    // leave other in an unusable state
+    other.oper_ = Operator::invalid;
+    other.braket_ = BraKet::invalid;
+    other.scratch2_ = nullptr;
     return *this;
   }
 
@@ -584,6 +609,7 @@ class Engine {
     precision_ = other.precision_;
     ln_precision_ = other.ln_precision_;
     cartesian_shell_normalization_ = other.cartesian_shell_normalization_;
+    scale_ = other.scale_;
     core_eval_pack_ = other.core_eval_pack_;
     params_ = other.params_;
     core_ints_params_ = other.core_ints_params_;
@@ -591,17 +617,17 @@ class Engine {
     return *this;
   }
 
-  /// returns the particle rank of the operator
+  /// @return the particle rank of the operator
   int operator_rank() const { return rank(oper_); }
 
-  /// rank of the braket
+  /// @return rank of the braket
   int braket_rank() const { return rank(braket_); }
 
-  /// (re)sets operator type to \c new_oper
-  /// @deprecated as of 2.5.0
-  DEPRECATED void set_oper(Operator new_oper) {
-    set(new_oper);
-  }
+  /// @return the operator
+  Operator oper() const { return oper_; }
+
+  /// @return the braket
+  BraKet braket() const { return braket_; }
 
   /// (re)sets operator type to @c new_oper
   /// @param[in] new_oper Operator whose integrals will be computed with the next call to Engine::compute()
@@ -617,12 +643,6 @@ class Engine {
                                                      // been set
     }
     return *this;
-  }
-
-  /// (re)sets braket type
-  /// @deprecated as of 2.5.0
-  DEPRECATED void set_braket(BraKet new_braket) {
-    set(new_braket);
   }
 
   /// (re)sets braket type to @c new_braket
@@ -786,28 +806,43 @@ class Engine {
     return *this;
   }
 
-  /// prints the contents of timers to standard output
-  void print_timers() {
+  /// @return the scaling factor by which the target integrals are multiplied
+  scalar_type prescaled_by() const {
+    return scale_;
+  }
+
+  /// @param[in] sc the scaling factor by which the target integrals are multiplied
+  /// @note the default factor is 1
+  /// @return reference to @c this for daisy-chaining
+  Engine& prescale_by(scalar_type sc) {
+    scale_ = sc;
+    return *this;
+  }
+
+  /// prints the contents of timers to @c os
+  void print_timers(std::ostream& os = std::cout) {
 #ifdef LIBINT2_ENGINE_TIMERS
-    std::cout << "timers: prereq = " << timers.read(0);
+    os << "timers: prereq = " << timers.read(0);
 #ifndef LIBINT2_PROFILE  // if libint's profiling was on, engine's build timer
                          // will include its overhead
     // do not report it, detailed profiling from libint will be printed below
-    std::cout << " build = " << timers.read(1);
+    os << " build = " << timers.read(1);
 #endif
-    std::cout << " tform = " << timers.read(2) << std::endl;
+    os << " tform = " << timers.read(2) << std::endl;
 #endif
 #ifdef LIBINT2_PROFILE
-    std::cout << "build timers: hrr = " << primdata_[0].timers->read(0)
-              << " vrr = " << primdata_[0].timers->read(1) << std::endl;
+    os << "build timers: hrr = " << primdata_[0].timers->read(0)
+       << " vrr = " << primdata_[0].timers->read(1) << std::endl;
 #endif
 #ifdef LIBINT2_ENGINE_TIMERS
 #ifdef LIBINT2_ENGINE_PROFILE_CLASS
     for (const auto& p : class_profiles) {
-      printf("{\"%s\", %10.5lf, %10.5lf, %10.5lf, %10.5lf, %ld, %ld},\n",
+      char buf[1024];
+      std::snprintf(buf, sizeof(buf), "{\"%s\", %10.5lf, %10.5lf, %10.5lf, %10.5lf, %ld, %ld},",
              p.first.to_string().c_str(), p.second.prereqs, p.second.build_vrr,
              p.second.build_hrr, p.second.tform, p.second.nshellset,
              p.second.nprimset);
+      os << buf << std::endl;
     }
 #endif
 #endif
@@ -867,6 +902,9 @@ class Engine {
 
   // specifies the normalization convention for Cartesian Gaussians
   CartesianShellNormalization cartesian_shell_normalization_;
+
+  // the target integrals are scaled by this factor (of course it is actually the core integrals that are scaled)
+  scalar_type scale_;
 
   any core_eval_pack_;
 

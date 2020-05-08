@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -32,6 +32,9 @@
 #include <prep_libint2.h>
 #include <libint2/cgshell_ordering.h>
 #include <libint2/util/memory.h>
+#if !LIBINT2_CONSTEXPR_STATICS
+#  include <libint2/statics_definition.h>
+#endif
 
 using namespace std;
 using namespace libint2;
@@ -210,7 +213,7 @@ void test_4eri(unsigned int deriv_order,
           for(int k=0; k<nrepeats; ++k) {
 
           // this prepares the data
-          prep_libint2(inteval, rsqset, 0, deriv_order);
+          prep_libint2(&inteval[0], rsqset, 0, deriv_order);
 
           //  now use Libint to compute
           double scale_target = 1.0;

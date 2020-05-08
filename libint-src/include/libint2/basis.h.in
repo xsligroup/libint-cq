@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -43,6 +43,40 @@
 #include <libint2/atom.h>
 
 namespace libint2 {
+
+  /// Computes the number of basis functions in a range of shells
+  /// @tparam a range type
+  /// @param[in] shells a sequence of shells
+  /// @return the number of basis functions
+  template <typename ShellRange> size_t nbf(ShellRange && shells) {
+    size_t n = 0;
+    for (const auto& shell: std::forward<ShellRange>(shells))
+      n += shell.size();
+    return n;
+  }
+
+  /// Computes the maximum number of primitives in any Shell among a range of shells
+  /// @tparam a range type
+  /// @param[in] shells a sequence of shells
+  /// @return the maximum number of primitives
+  template <typename ShellRange> size_t max_nprim(ShellRange && shells) {
+    size_t n = 0;
+    for (auto shell: std::forward<ShellRange>(shells))
+      n = std::max(shell.nprim(), n);
+    return n;
+  }
+
+  /// Computes the maximum angular momentum quantum number @c l in any Shell among a range of shells
+  /// @tparam a range type
+  /// @param[in] shells a sequence of shells
+  /// @return the maximum angular momentum
+  template <typename ShellRange> int max_l(ShellRange && shells) {
+    int l = 0;
+    for (auto shell: std::forward<ShellRange>(shells))
+      for (auto c: shell.contr)
+        l = std::max(c.l, l);
+    return l;
+  }
 
   /// BasisSet is a slightly decorated \c std::vector of \c libint2::Shell objects.
   class BasisSet : public std::vector<libint2::Shell> {
@@ -151,7 +185,7 @@ namespace libint2 {
 
           auto Z = atoms[a].atomic_number;
 
-          if (element_bases.size() > Z && !element_bases.at(Z).empty()) {  // found? add shells in order
+          if (decltype(Z)(element_bases.size()) > Z && !element_bases.at(Z).empty()) {  // found? add shells in order
             for(auto s: element_bases.at(Z)) {
               this->push_back(std::move(s));
               this->back().move({{atoms[a].x, atoms[a].y, atoms[a].z}});
@@ -249,9 +283,9 @@ namespace libint2 {
       std::vector<size_t> shell2bf_;
 
       void init() {
-        nbf_ = nbf(*this);
-        max_nprim_ = max_nprim(*this);
-        max_l_ = max_l(*this);
+        nbf_ = libint2::nbf(*this);
+        max_nprim_ = libint2::max_nprim(*this);
+        max_l_ = libint2::max_l(*this);
         shell2bf_ = compute_shell2bf(*this);
       }
 
@@ -329,24 +363,32 @@ namespace libint2 {
 #elif defined(SRCDATADIR)
           path = std::string{SRCDATADIR};
 #else
-          path = std::string("@DATADIR_ABSOLUTE@") + std::string("/basis");
+          path = std::string("@DATADIR_ABSOLUTE@");
 #endif
         }
-        // validate path
+        // validate basis_path = path + "/basis"
+        std::string basis_path = path + std::string("/basis");
         bool error = true;
         std::error_code ec;
-        if (not path.empty()) {
-          struct stat sb;
-          error = (::stat(path.c_str(), &sb) == -1);
-          error = error && not S_ISDIR(sb.st_mode);
-          if (error)
-            ec = std::error_code(errno, std::generic_category());
+        auto validate_basis_path = [&basis_path, &error, &ec]() -> void {
+          if (not basis_path.empty()) {
+            struct stat sb;
+            error = (::stat(basis_path.c_str(), &sb) == -1);
+            error = error || not S_ISDIR(sb.st_mode);
+            if (error)
+              ec = std::error_code(errno, std::generic_category());
+          }
+        };
+        validate_basis_path();
+        if (error) { // try without "/basis"
+          basis_path = path;
+          validate_basis_path();
         }
         if (error) {
-          std::ostringstream oss; oss << "BasisSet::data_path(): path \"" << path << "\" is not valid";
+          std::ostringstream oss; oss << "BasisSet::data_path(): path \"" << path << "{/basis}\" is not valid";
           throw std::system_error(ec, oss.str());
         }
-        return path;
+        return basis_path;
       }
       
       /// converts fortran scientific-notation floats that use d/D instead of e/E in \c str
@@ -377,12 +419,13 @@ namespace libint2 {
 
         std::locale locale(locale_name.c_str());  // TODO omit c_str() with up-to-date stdlib
         std::vector<std::vector<libint2::Shell>> ref_shells(118); // 118 = number of chemical elements
-        if (libint2::verbose())
-          std::cout << "Will read basis set from " << file_dot_g94 << std::endl;
         std::ifstream is(file_dot_g94);
         is.imbue(locale);
 
         if (is.good()) {
+          if (libint2::verbose())
+            libint2::verbose_stream() << "Will read basis set from " << file_dot_g94 << std::endl;
+
           std::string line, rest;
 
           // skip till first basis
@@ -504,26 +547,16 @@ namespace libint2 {
         return ref_shells;
       }
 
-      static size_t nbf(const std::vector<libint2::Shell>& shells) {
-        size_t n = 0;
-        for (const auto& shell: shells)
-          n += shell.size();
-        return n;
+      DEPRECATED static size_t nbf(const std::vector<libint2::Shell>& shells) {
+        return libint2::nbf(shells);
       }
 
-      static size_t max_nprim(const std::vector<libint2::Shell>& shells) {
-        size_t n = 0;
-        for (auto shell: shells)
-          n = std::max(shell.nprim(), n);
-        return n;
+      DEPRECATED static size_t max_nprim(const std::vector<libint2::Shell>& shells) {
+        return libint2::max_nprim(shells);
       }
 
-      static int max_l(const std::vector<libint2::Shell>& shells) {
-        int l = 0;
-        for (auto shell: shells)
-          for (auto c: shell.contr)
-            l = std::max(c.l, l);
-        return l;
+      DEPRECATED static int max_l(const std::vector<libint2::Shell>& shells) {
+        return libint2::max_l(shells);
       }
 
       static std::vector<size_t> compute_shell2bf(const std::vector<libint2::Shell>& shells) {

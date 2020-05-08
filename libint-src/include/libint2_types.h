@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -57,6 +57,8 @@ LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_12[LIBINT2_MAX_VECLEN];
 LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_13[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_14 1
 LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_14[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_15 1
+LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_15[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0 1
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1 1
@@ -115,6 +117,18 @@ LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_26[LIBINT2_MAX
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_27[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_28 1
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_28[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_29 1
+LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_29[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha1_rho_over_zeta2 1
+LIBINT2_REALTYPE alpha1_rho_over_zeta2[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha2_rho_over_zeta2 1
+LIBINT2_REALTYPE alpha2_rho_over_zeta2[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha4_rho_over_eta2 1
+LIBINT2_REALTYPE alpha4_rho_over_eta2[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_rho12_over_alpha1 1
+LIBINT2_REALTYPE rho12_over_alpha1[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_rho34_over_alpha3 1
+LIBINT2_REALTYPE rho34_over_alpha3[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_AB_x 1
 LIBINT2_REALTYPE AB_x[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_AB_y 1
@@ -187,6 +201,12 @@ LIBINT2_REALTYPE _0_Overlap_0_x[LIBINT2_MAX_VECLEN];
 LIBINT2_REALTYPE _0_Overlap_0_y[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__0_Overlap_0_z 1
 LIBINT2_REALTYPE _0_Overlap_0_z[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha1_over_zetapluseta 1
+LIBINT2_REALTYPE alpha1_over_zetapluseta[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha2_over_zetapluseta 1
+LIBINT2_REALTYPE alpha2_over_zetapluseta[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_alpha4_over_zetapluseta 1
+LIBINT2_REALTYPE alpha4_over_zetapluseta[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_oo2e 1
 LIBINT2_REALTYPE oo2e[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_oo2z 1
@@ -201,6 +221,8 @@ LIBINT2_REALTYPE roz[LIBINT2_MAX_VECLEN];
 LIBINT2_REALTYPE two_alpha0_bra[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_two_alpha0_ket 1
 LIBINT2_REALTYPE two_alpha0_ket[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_two_alpha1_ket 1
+LIBINT2_REALTYPE two_alpha1_ket[LIBINT2_MAX_VECLEN];
 /** Scratch buffer to hold intermediates */
 #ifdef __cplusplus
 mutable 
@@ -255,7 +277,15 @@ typedef Libint_t Libint_1emultipole_t;
 typedef Libint_t Libint_2emultipole_t;
 typedef Libint_t Libint_3emultipole_t;
 typedef Libint_t Libint_sphemultipole_t;
+typedef Libint_t Libint_overlap1_t;
+typedef Libint_t Libint_kinetic1_t;
+typedef Libint_t Libint_elecpot1_t;
+typedef Libint_t Libint_1emultipole1_t;
+typedef Libint_t Libint_2emultipole1_t;
+typedef Libint_t Libint_3emultipole1_t;
+typedef Libint_t Libint_sphemultipole1_t;
 typedef Libint_t Libint_eri_t;
+typedef Libint_t Libint_eri1_t;
 typedef Libint_t Libint_3eri_t;
 typedef Libint_t Libint_2eri_t;
 #endif

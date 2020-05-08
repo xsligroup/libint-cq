@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -20,9 +20,6 @@
 
 #include <libint2.h>
 #include <GenericContract.h>
-#include <OSVRRP0InBra_aB_d__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0.h>
-#include <OSVRRP0InBra_aB_f__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0.h>
-#include <OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,19 +33,127 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0(inteval, &(stack[((hsi*3+10)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi]));
-OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0(inteval, &(stack[((hsi*3+13)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi]));
-OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0(inteval, &(stack[((hsi*3+16)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_3[vi]));
-OSVRRP0InBra_aB_d__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0(inteval, &(stack[((hsi*6+19)*1+lsi)*1]), &(stack[((hsi*3+16)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi]));
-OSVRRP0InBra_aB_f__0__s__1___TwoPRep_unit__0__unit__1___Ab__up_0(inteval, &(stack[((hsi*10+25)*1+lsi)*1]), &(stack[((hsi*6+19)*1+lsi)*1]), &(stack[((hsi*3+13)*1+lsi)*1]), &(stack[((hsi*3+10)*1+lsi)*1]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*10+0)*1+lsi)*1]),&(stack[((hsi*10+25)*1+lsi)*1]),10);
+LIBINT2_REALTYPE fp40;
+fp40 = 2.0000000000000000e+00 * inteval->oo2z[vi];
+LIBINT2_REALTYPE fp43;
+fp43 = inteval->WP_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi];
+LIBINT2_REALTYPE fp13;
+fp13 = inteval->roz[vi] * fp43;
+LIBINT2_REALTYPE fp49;
+fp49 = inteval->WP_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp12;
+fp12 = fp49 - fp13;
+LIBINT2_REALTYPE fp11;
+fp11 = fp40 * fp12;
+LIBINT2_REALTYPE fp34;
+fp34 = inteval->roz[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi];
+LIBINT2_REALTYPE fp33;
+fp33 = inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi] - fp34;
+LIBINT2_REALTYPE fp32;
+fp32 = inteval->oo2z[vi] * fp33;
+LIBINT2_REALTYPE fp42;
+fp42 = inteval->WP_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_3[vi];
+LIBINT2_REALTYPE fp23;
+fp23 = inteval->WP_z[vi] * fp42;
+LIBINT2_REALTYPE fp22;
+fp22 = fp23 + fp32;
+LIBINT2_REALTYPE fp14;
+fp14 = inteval->WP_z[vi] * fp22;
+LIBINT2_REALTYPE fp10;
+fp10 = fp14 + fp11;
+LIBINT2_REALTYPE fp9;
+fp9 = fp10;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+9)*1+lsi)*1]),&(fp9),1);
+LIBINT2_REALTYPE fp15;
+fp15 = inteval->WP_y[vi] * fp22;
+LIBINT2_REALTYPE fp8;
+fp8 = fp15;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+8)*1+lsi)*1]),&(fp8),1);
+LIBINT2_REALTYPE fp44;
+fp44 = inteval->WP_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_3[vi];
+LIBINT2_REALTYPE fp27;
+fp27 = inteval->WP_y[vi] * fp44;
+LIBINT2_REALTYPE fp26;
+fp26 = fp27 + fp32;
+LIBINT2_REALTYPE fp16;
+fp16 = inteval->WP_z[vi] * fp26;
+LIBINT2_REALTYPE fp7;
+fp7 = fp16;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+7)*1+lsi)*1]),&(fp7),1);
+LIBINT2_REALTYPE fp45;
+fp45 = inteval->WP_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi];
+LIBINT2_REALTYPE fp20;
+fp20 = inteval->roz[vi] * fp45;
+LIBINT2_REALTYPE fp50;
+fp50 = inteval->WP_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp19;
+fp19 = fp50 - fp20;
+LIBINT2_REALTYPE fp18;
+fp18 = fp40 * fp19;
+LIBINT2_REALTYPE fp21;
+fp21 = inteval->WP_y[vi] * fp26;
+LIBINT2_REALTYPE fp17;
+fp17 = fp21 + fp18;
+LIBINT2_REALTYPE fp6;
+fp6 = fp17;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+6)*1+lsi)*1]),&(fp6),1);
+LIBINT2_REALTYPE fp24;
+fp24 = inteval->WP_x[vi] * fp22;
+LIBINT2_REALTYPE fp5;
+fp5 = fp24;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+5)*1+lsi)*1]),&(fp5),1);
+LIBINT2_REALTYPE fp46;
+fp46 = inteval->WP_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_3[vi];
+LIBINT2_REALTYPE fp48;
+fp48 = inteval->WP_y[vi] * fp46;
+LIBINT2_REALTYPE fp25;
+fp25 = inteval->WP_z[vi] * fp48;
+LIBINT2_REALTYPE fp4;
+fp4 = fp25;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+4)*1+lsi)*1]),&(fp4),1);
+LIBINT2_REALTYPE fp28;
+fp28 = inteval->WP_x[vi] * fp26;
+LIBINT2_REALTYPE fp3;
+fp3 = fp28;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+3)*1+lsi)*1]),&(fp3),1);
+LIBINT2_REALTYPE fp35;
+fp35 = inteval->WP_x[vi] * fp46;
+LIBINT2_REALTYPE fp31;
+fp31 = fp35 + fp32;
+LIBINT2_REALTYPE fp29;
+fp29 = inteval->WP_z[vi] * fp31;
+LIBINT2_REALTYPE fp2;
+fp2 = fp29;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+2)*1+lsi)*1]),&(fp2),1);
+LIBINT2_REALTYPE fp30;
+fp30 = inteval->WP_y[vi] * fp31;
+LIBINT2_REALTYPE fp1;
+fp1 = fp30;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+1)*1+lsi)*1]),&(fp1),1);
+LIBINT2_REALTYPE fp47;
+fp47 = inteval->WP_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_2[vi];
+LIBINT2_REALTYPE fp39;
+fp39 = inteval->roz[vi] * fp47;
+LIBINT2_REALTYPE fp51;
+fp51 = inteval->WP_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp38;
+fp38 = fp51 - fp39;
+LIBINT2_REALTYPE fp37;
+fp37 = fp40 * fp38;
+LIBINT2_REALTYPE fp41;
+fp41 = inteval->WP_x[vi] * fp31;
+LIBINT2_REALTYPE fp36;
+fp36 = fp41 + fp37;
+LIBINT2_REALTYPE fp0;
+fp0 = fp36;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+0)*1+lsi)*1]),&(fp0),1);
 }
 }
 }
 const int hsi = 0;
 const int lsi = 0;
 const int vi = 0;
-/** Number of flops = 10 */
+/** Number of flops = 52 */
 }
 
 #ifdef __cplusplus

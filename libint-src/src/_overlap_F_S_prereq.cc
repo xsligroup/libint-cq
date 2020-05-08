@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -19,10 +19,6 @@
  */
 
 #include <libint2.h>
-#include <CR_aB_X3__0___Overlap_X0__0___Ab__up_.h>
-#include <CR_aB_Y3__0___Overlap_Y0__0___Ab__up_.h>
-#include <CR_aB_Z3__0___Overlap_Z0__0___Ab__up_.h>
-#include <CR_aB_f__0___CartesianMultipole_sB_0_c_0_c_0_Sb__s__0___Ab__up_.h>
 #include <GenericContract.h>
 
 #ifdef __cplusplus
@@ -37,18 +33,157 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-CR_aB_Z3__0___Overlap_Z0__0___Ab__up_(inteval, &(stack[((hsi*4+10)*1+lsi)*1]), &(inteval->_0_Overlap_0_z[vi]));
-CR_aB_Y3__0___Overlap_Y0__0___Ab__up_(inteval, &(stack[((hsi*4+14)*1+lsi)*1]), &(inteval->_0_Overlap_0_y[vi]));
-CR_aB_X3__0___Overlap_X0__0___Ab__up_(inteval, &(stack[((hsi*4+18)*1+lsi)*1]), &(inteval->_0_Overlap_0_x[vi]));
-CR_aB_f__0___CartesianMultipole_sB_0_c_0_c_0_Sb__s__0___Ab__up_(inteval, &(stack[((hsi*10+22)*1+lsi)*1]), &(stack[((hsi*4+18)*1+lsi)*1]), &(stack[((hsi*4+14)*1+lsi)*1]), &(stack[((hsi*4+10)*1+lsi)*1]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*10+0)*1+lsi)*1]),&(stack[((hsi*10+22)*1+lsi)*1]),10);
+LIBINT2_REALTYPE fp17;
+fp17 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_z[vi];
+LIBINT2_REALTYPE fp16;
+fp16 = inteval->PA_z[vi] * fp17;
+LIBINT2_REALTYPE fp33;
+fp33 = 2.0000000000000000e+00 * inteval->oo2z[vi];
+LIBINT2_REALTYPE fp11;
+fp11 = fp33 * fp16;
+LIBINT2_REALTYPE fp14;
+fp14 = inteval->oo2z[vi] * fp17;
+LIBINT2_REALTYPE fp15;
+fp15 = inteval->PA_z[vi] * fp16;
+LIBINT2_REALTYPE fp13;
+fp13 = fp15 + fp14;
+LIBINT2_REALTYPE fp12;
+fp12 = inteval->PA_z[vi] * fp13;
+LIBINT2_REALTYPE fp10;
+fp10 = fp12 + fp11;
+LIBINT2_REALTYPE fp35;
+fp35 = 0.0000000000000000e+00 + fp10;
+LIBINT2_REALTYPE fp25;
+fp25 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_y[vi];
+LIBINT2_REALTYPE fp42;
+fp42 = 0.0000000000000000e+00 + fp25;
+LIBINT2_REALTYPE fp26;
+fp26 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_x[vi];
+LIBINT2_REALTYPE fp43;
+fp43 = 0.0000000000000000e+00 + fp26;
+LIBINT2_REALTYPE fp48;
+fp48 = fp43 * fp42;
+LIBINT2_REALTYPE fp47;
+fp47 = fp48 * fp35;
+LIBINT2_REALTYPE fp9;
+fp9 = fp47;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+9)*1+lsi)*1]),&(fp9),1);
+LIBINT2_REALTYPE fp36;
+fp36 = 0.0000000000000000e+00 + fp13;
+LIBINT2_REALTYPE fp24;
+fp24 = inteval->PA_y[vi] * fp25;
+LIBINT2_REALTYPE fp41;
+fp41 = 0.0000000000000000e+00 + fp24;
+LIBINT2_REALTYPE fp50;
+fp50 = fp43 * fp41;
+LIBINT2_REALTYPE fp49;
+fp49 = fp50 * fp36;
+LIBINT2_REALTYPE fp8;
+fp8 = fp49;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+8)*1+lsi)*1]),&(fp8),1);
+LIBINT2_REALTYPE fp37;
+fp37 = 0.0000000000000000e+00 + fp16;
+LIBINT2_REALTYPE fp22;
+fp22 = inteval->oo2z[vi] * fp25;
+LIBINT2_REALTYPE fp23;
+fp23 = inteval->PA_y[vi] * fp24;
+LIBINT2_REALTYPE fp21;
+fp21 = fp23 + fp22;
+LIBINT2_REALTYPE fp40;
+fp40 = 0.0000000000000000e+00 + fp21;
+LIBINT2_REALTYPE fp52;
+fp52 = fp43 * fp40;
+LIBINT2_REALTYPE fp51;
+fp51 = fp52 * fp37;
+LIBINT2_REALTYPE fp7;
+fp7 = fp51;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+7)*1+lsi)*1]),&(fp7),1);
+LIBINT2_REALTYPE fp38;
+fp38 = 0.0000000000000000e+00 + fp17;
+LIBINT2_REALTYPE fp19;
+fp19 = fp33 * fp24;
+LIBINT2_REALTYPE fp20;
+fp20 = inteval->PA_y[vi] * fp21;
+LIBINT2_REALTYPE fp18;
+fp18 = fp20 + fp19;
+LIBINT2_REALTYPE fp39;
+fp39 = 0.0000000000000000e+00 + fp18;
+LIBINT2_REALTYPE fp54;
+fp54 = fp43 * fp39;
+LIBINT2_REALTYPE fp53;
+fp53 = fp54 * fp38;
+LIBINT2_REALTYPE fp6;
+fp6 = fp53;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+6)*1+lsi)*1]),&(fp6),1);
+LIBINT2_REALTYPE fp27;
+fp27 = inteval->PA_x[vi] * fp26;
+LIBINT2_REALTYPE fp44;
+fp44 = 0.0000000000000000e+00 + fp27;
+LIBINT2_REALTYPE fp56;
+fp56 = fp44 * fp42;
+LIBINT2_REALTYPE fp55;
+fp55 = fp56 * fp36;
+LIBINT2_REALTYPE fp5;
+fp5 = fp55;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+5)*1+lsi)*1]),&(fp5),1);
+LIBINT2_REALTYPE fp58;
+fp58 = fp44 * fp41;
+LIBINT2_REALTYPE fp57;
+fp57 = fp58 * fp37;
+LIBINT2_REALTYPE fp4;
+fp4 = fp57;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+4)*1+lsi)*1]),&(fp4),1);
+LIBINT2_REALTYPE fp60;
+fp60 = fp44 * fp40;
+LIBINT2_REALTYPE fp59;
+fp59 = fp60 * fp38;
+LIBINT2_REALTYPE fp3;
+fp3 = fp59;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+3)*1+lsi)*1]),&(fp3),1);
+LIBINT2_REALTYPE fp29;
+fp29 = inteval->oo2z[vi] * fp26;
+LIBINT2_REALTYPE fp30;
+fp30 = inteval->PA_x[vi] * fp27;
+LIBINT2_REALTYPE fp28;
+fp28 = fp30 + fp29;
+LIBINT2_REALTYPE fp45;
+fp45 = 0.0000000000000000e+00 + fp28;
+LIBINT2_REALTYPE fp62;
+fp62 = fp45 * fp42;
+LIBINT2_REALTYPE fp61;
+fp61 = fp62 * fp37;
+LIBINT2_REALTYPE fp2;
+fp2 = fp61;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+2)*1+lsi)*1]),&(fp2),1);
+LIBINT2_REALTYPE fp64;
+fp64 = fp45 * fp41;
+LIBINT2_REALTYPE fp63;
+fp63 = fp64 * fp38;
+LIBINT2_REALTYPE fp1;
+fp1 = fp63;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+1)*1+lsi)*1]),&(fp1),1);
+LIBINT2_REALTYPE fp32;
+fp32 = fp33 * fp27;
+LIBINT2_REALTYPE fp34;
+fp34 = inteval->PA_x[vi] * fp28;
+LIBINT2_REALTYPE fp31;
+fp31 = fp34 + fp32;
+LIBINT2_REALTYPE fp46;
+fp46 = 0.0000000000000000e+00 + fp31;
+LIBINT2_REALTYPE fp66;
+fp66 = fp46 * fp42;
+LIBINT2_REALTYPE fp65;
+fp65 = fp66 * fp38;
+LIBINT2_REALTYPE fp0;
+fp0 = fp65;
+_libint2_static_api_inc1_short_(&(stack[((hsi*10+0)*1+lsi)*1]),&(fp0),1);
 }
 }
 }
 const int hsi = 0;
 const int lsi = 0;
 const int vi = 0;
-/** Number of flops = 10 */
+/** Number of flops = 67 */
 }
 
 #ifdef __cplusplus

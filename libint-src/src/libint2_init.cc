@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -166,6 +166,83 @@ assert(max_am <= 7);
 if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_sphemultipole * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_sphemultipole * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_sphemultipole > LIBINT2_MAX_HRR_LSRANK_7_sphemultipole ? LIBINT2_MAX_HRR_HSRANK_7_sphemultipole : LIBINT2_MAX_HRR_LSRANK_7_sphemultipole);
 return 0; // unreachable
 }
+size_t libint2_need_memory_overlap1(int max_am) {
+assert(max_am <= 7);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_overlap1 > LIBINT2_MAX_HRR_LSRANK_0_overlap1 ? LIBINT2_MAX_HRR_HSRANK_0_overlap1 : LIBINT2_MAX_HRR_LSRANK_0_overlap1);
+assert(max_am <= 7);
+if (max_am == 1) return LIBINT2_MAX_STACK_SIZE_1_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_1_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_1_overlap1 > LIBINT2_MAX_HRR_LSRANK_1_overlap1 ? LIBINT2_MAX_HRR_HSRANK_1_overlap1 : LIBINT2_MAX_HRR_LSRANK_1_overlap1);
+assert(max_am <= 7);
+if (max_am == 2) return LIBINT2_MAX_STACK_SIZE_2_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_2_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_2_overlap1 > LIBINT2_MAX_HRR_LSRANK_2_overlap1 ? LIBINT2_MAX_HRR_HSRANK_2_overlap1 : LIBINT2_MAX_HRR_LSRANK_2_overlap1);
+assert(max_am <= 7);
+if (max_am == 3) return LIBINT2_MAX_STACK_SIZE_3_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_3_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_3_overlap1 > LIBINT2_MAX_HRR_LSRANK_3_overlap1 ? LIBINT2_MAX_HRR_HSRANK_3_overlap1 : LIBINT2_MAX_HRR_LSRANK_3_overlap1);
+assert(max_am <= 7);
+if (max_am == 4) return LIBINT2_MAX_STACK_SIZE_4_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_4_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_4_overlap1 > LIBINT2_MAX_HRR_LSRANK_4_overlap1 ? LIBINT2_MAX_HRR_HSRANK_4_overlap1 : LIBINT2_MAX_HRR_LSRANK_4_overlap1);
+assert(max_am <= 7);
+if (max_am == 5) return LIBINT2_MAX_STACK_SIZE_5_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_5_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_5_overlap1 > LIBINT2_MAX_HRR_LSRANK_5_overlap1 ? LIBINT2_MAX_HRR_HSRANK_5_overlap1 : LIBINT2_MAX_HRR_LSRANK_5_overlap1);
+assert(max_am <= 7);
+if (max_am == 6) return LIBINT2_MAX_STACK_SIZE_6_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_6_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_6_overlap1 > LIBINT2_MAX_HRR_LSRANK_6_overlap1 ? LIBINT2_MAX_HRR_HSRANK_6_overlap1 : LIBINT2_MAX_HRR_LSRANK_6_overlap1);
+assert(max_am <= 7);
+if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_overlap1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_overlap1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_overlap1 > LIBINT2_MAX_HRR_LSRANK_7_overlap1 ? LIBINT2_MAX_HRR_HSRANK_7_overlap1 : LIBINT2_MAX_HRR_LSRANK_7_overlap1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_kinetic1(int max_am) {
+assert(max_am <= 7);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_kinetic1 > LIBINT2_MAX_HRR_LSRANK_0_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_0_kinetic1 : LIBINT2_MAX_HRR_LSRANK_0_kinetic1);
+assert(max_am <= 7);
+if (max_am == 1) return LIBINT2_MAX_STACK_SIZE_1_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_1_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_1_kinetic1 > LIBINT2_MAX_HRR_LSRANK_1_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_1_kinetic1 : LIBINT2_MAX_HRR_LSRANK_1_kinetic1);
+assert(max_am <= 7);
+if (max_am == 2) return LIBINT2_MAX_STACK_SIZE_2_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_2_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_2_kinetic1 > LIBINT2_MAX_HRR_LSRANK_2_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_2_kinetic1 : LIBINT2_MAX_HRR_LSRANK_2_kinetic1);
+assert(max_am <= 7);
+if (max_am == 3) return LIBINT2_MAX_STACK_SIZE_3_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_3_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_3_kinetic1 > LIBINT2_MAX_HRR_LSRANK_3_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_3_kinetic1 : LIBINT2_MAX_HRR_LSRANK_3_kinetic1);
+assert(max_am <= 7);
+if (max_am == 4) return LIBINT2_MAX_STACK_SIZE_4_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_4_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_4_kinetic1 > LIBINT2_MAX_HRR_LSRANK_4_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_4_kinetic1 : LIBINT2_MAX_HRR_LSRANK_4_kinetic1);
+assert(max_am <= 7);
+if (max_am == 5) return LIBINT2_MAX_STACK_SIZE_5_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_5_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_5_kinetic1 > LIBINT2_MAX_HRR_LSRANK_5_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_5_kinetic1 : LIBINT2_MAX_HRR_LSRANK_5_kinetic1);
+assert(max_am <= 7);
+if (max_am == 6) return LIBINT2_MAX_STACK_SIZE_6_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_6_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_6_kinetic1 > LIBINT2_MAX_HRR_LSRANK_6_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_6_kinetic1 : LIBINT2_MAX_HRR_LSRANK_6_kinetic1);
+assert(max_am <= 7);
+if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_kinetic1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_kinetic1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_kinetic1 > LIBINT2_MAX_HRR_LSRANK_7_kinetic1 ? LIBINT2_MAX_HRR_HSRANK_7_kinetic1 : LIBINT2_MAX_HRR_LSRANK_7_kinetic1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_elecpot1(int max_am) {
+assert(max_am <= 7);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_elecpot1 > LIBINT2_MAX_HRR_LSRANK_0_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_0_elecpot1 : LIBINT2_MAX_HRR_LSRANK_0_elecpot1);
+assert(max_am <= 7);
+if (max_am == 1) return LIBINT2_MAX_STACK_SIZE_1_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_1_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_1_elecpot1 > LIBINT2_MAX_HRR_LSRANK_1_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_1_elecpot1 : LIBINT2_MAX_HRR_LSRANK_1_elecpot1);
+assert(max_am <= 7);
+if (max_am == 2) return LIBINT2_MAX_STACK_SIZE_2_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_2_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_2_elecpot1 > LIBINT2_MAX_HRR_LSRANK_2_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_2_elecpot1 : LIBINT2_MAX_HRR_LSRANK_2_elecpot1);
+assert(max_am <= 7);
+if (max_am == 3) return LIBINT2_MAX_STACK_SIZE_3_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_3_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_3_elecpot1 > LIBINT2_MAX_HRR_LSRANK_3_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_3_elecpot1 : LIBINT2_MAX_HRR_LSRANK_3_elecpot1);
+assert(max_am <= 7);
+if (max_am == 4) return LIBINT2_MAX_STACK_SIZE_4_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_4_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_4_elecpot1 > LIBINT2_MAX_HRR_LSRANK_4_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_4_elecpot1 : LIBINT2_MAX_HRR_LSRANK_4_elecpot1);
+assert(max_am <= 7);
+if (max_am == 5) return LIBINT2_MAX_STACK_SIZE_5_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_5_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_5_elecpot1 > LIBINT2_MAX_HRR_LSRANK_5_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_5_elecpot1 : LIBINT2_MAX_HRR_LSRANK_5_elecpot1);
+assert(max_am <= 7);
+if (max_am == 6) return LIBINT2_MAX_STACK_SIZE_6_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_6_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_6_elecpot1 > LIBINT2_MAX_HRR_LSRANK_6_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_6_elecpot1 : LIBINT2_MAX_HRR_LSRANK_6_elecpot1);
+assert(max_am <= 7);
+if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_elecpot1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_elecpot1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_elecpot1 > LIBINT2_MAX_HRR_LSRANK_7_elecpot1 ? LIBINT2_MAX_HRR_HSRANK_7_elecpot1 : LIBINT2_MAX_HRR_LSRANK_7_elecpot1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_1emultipole1(int max_am) {
+assert(max_am <= 0);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_1emultipole1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_1emultipole1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_1emultipole1 > LIBINT2_MAX_HRR_LSRANK_0_1emultipole1 ? LIBINT2_MAX_HRR_HSRANK_0_1emultipole1 : LIBINT2_MAX_HRR_LSRANK_0_1emultipole1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_2emultipole1(int max_am) {
+assert(max_am <= 0);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_2emultipole1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_2emultipole1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_2emultipole1 > LIBINT2_MAX_HRR_LSRANK_0_2emultipole1 ? LIBINT2_MAX_HRR_HSRANK_0_2emultipole1 : LIBINT2_MAX_HRR_LSRANK_0_2emultipole1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_3emultipole1(int max_am) {
+assert(max_am <= 0);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_3emultipole1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_3emultipole1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_3emultipole1 > LIBINT2_MAX_HRR_LSRANK_0_3emultipole1 ? LIBINT2_MAX_HRR_HSRANK_0_3emultipole1 : LIBINT2_MAX_HRR_LSRANK_0_3emultipole1);
+return 0; // unreachable
+}
+size_t libint2_need_memory_sphemultipole1(int max_am) {
+assert(max_am <= 0);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_sphemultipole1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_sphemultipole1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_sphemultipole1 > LIBINT2_MAX_HRR_LSRANK_0_sphemultipole1 ? LIBINT2_MAX_HRR_HSRANK_0_sphemultipole1 : LIBINT2_MAX_HRR_LSRANK_0_sphemultipole1);
+return 0; // unreachable
+}
 size_t libint2_need_memory_eri(int max_am) {
 assert(max_am <= 7);
 if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_eri * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_eri * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_eri > LIBINT2_MAX_HRR_LSRANK_0_eri ? LIBINT2_MAX_HRR_HSRANK_0_eri : LIBINT2_MAX_HRR_LSRANK_0_eri);
@@ -183,6 +260,25 @@ assert(max_am <= 7);
 if (max_am == 6) return LIBINT2_MAX_STACK_SIZE_6_eri * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_6_eri * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_6_eri > LIBINT2_MAX_HRR_LSRANK_6_eri ? LIBINT2_MAX_HRR_HSRANK_6_eri : LIBINT2_MAX_HRR_LSRANK_6_eri);
 assert(max_am <= 7);
 if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_eri * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_eri * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_eri > LIBINT2_MAX_HRR_LSRANK_7_eri ? LIBINT2_MAX_HRR_HSRANK_7_eri : LIBINT2_MAX_HRR_LSRANK_7_eri);
+return 0; // unreachable
+}
+size_t libint2_need_memory_eri1(int max_am) {
+assert(max_am <= 7);
+if (max_am == 0) return LIBINT2_MAX_STACK_SIZE_0_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_0_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_0_eri1 > LIBINT2_MAX_HRR_LSRANK_0_eri1 ? LIBINT2_MAX_HRR_HSRANK_0_eri1 : LIBINT2_MAX_HRR_LSRANK_0_eri1);
+assert(max_am <= 7);
+if (max_am == 1) return LIBINT2_MAX_STACK_SIZE_1_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_1_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_1_eri1 > LIBINT2_MAX_HRR_LSRANK_1_eri1 ? LIBINT2_MAX_HRR_HSRANK_1_eri1 : LIBINT2_MAX_HRR_LSRANK_1_eri1);
+assert(max_am <= 7);
+if (max_am == 2) return LIBINT2_MAX_STACK_SIZE_2_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_2_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_2_eri1 > LIBINT2_MAX_HRR_LSRANK_2_eri1 ? LIBINT2_MAX_HRR_HSRANK_2_eri1 : LIBINT2_MAX_HRR_LSRANK_2_eri1);
+assert(max_am <= 7);
+if (max_am == 3) return LIBINT2_MAX_STACK_SIZE_3_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_3_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_3_eri1 > LIBINT2_MAX_HRR_LSRANK_3_eri1 ? LIBINT2_MAX_HRR_HSRANK_3_eri1 : LIBINT2_MAX_HRR_LSRANK_3_eri1);
+assert(max_am <= 7);
+if (max_am == 4) return LIBINT2_MAX_STACK_SIZE_4_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_4_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_4_eri1 > LIBINT2_MAX_HRR_LSRANK_4_eri1 ? LIBINT2_MAX_HRR_HSRANK_4_eri1 : LIBINT2_MAX_HRR_LSRANK_4_eri1);
+assert(max_am <= 7);
+if (max_am == 5) return LIBINT2_MAX_STACK_SIZE_5_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_5_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_5_eri1 > LIBINT2_MAX_HRR_LSRANK_5_eri1 ? LIBINT2_MAX_HRR_HSRANK_5_eri1 : LIBINT2_MAX_HRR_LSRANK_5_eri1);
+assert(max_am <= 7);
+if (max_am == 6) return LIBINT2_MAX_STACK_SIZE_6_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_6_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_6_eri1 > LIBINT2_MAX_HRR_LSRANK_6_eri1 ? LIBINT2_MAX_HRR_HSRANK_6_eri1 : LIBINT2_MAX_HRR_LSRANK_6_eri1);
+assert(max_am <= 7);
+if (max_am == 7) return LIBINT2_MAX_STACK_SIZE_7_eri1 * LIBINT2_MAX_VECLEN + LIBINT2_MAX_VECTOR_STACK_SIZE_7_eri1 * LIBINT2_MAX_VECLEN * (LIBINT2_MAX_HRR_HSRANK_7_eri1 > LIBINT2_MAX_HRR_LSRANK_7_eri1 ? LIBINT2_MAX_HRR_HSRANK_7_eri1 : LIBINT2_MAX_HRR_LSRANK_7_eri1);
 return 0; // unreachable
 }
 size_t libint2_need_memory_3eri(int max_am) {
@@ -434,6 +530,125 @@ assert(max_am <= 7);
 if (max_am == 7)
 inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_sphemultipole * LIBINT2_MAX_VECLEN;
 }
+void libint2_init_overlap1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_overlap1(max_am));
+assert(max_am <= 7);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 1)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_1_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 2)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_2_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 3)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_3_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 4)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_4_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 5)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_5_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 6)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_6_overlap1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 7)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_overlap1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_kinetic1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_kinetic1(max_am));
+assert(max_am <= 7);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 1)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_1_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 2)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_2_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 3)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_3_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 4)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_4_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 5)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_5_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 6)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_6_kinetic1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 7)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_kinetic1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_elecpot1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_elecpot1(max_am));
+assert(max_am <= 7);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 1)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_1_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 2)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_2_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 3)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_3_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 4)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_4_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 5)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_5_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 6)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_6_elecpot1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 7)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_elecpot1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_1emultipole1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_1emultipole1(max_am));
+assert(max_am <= 0);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_1emultipole1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_2emultipole1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_2emultipole1(max_am));
+assert(max_am <= 0);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_2emultipole1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_3emultipole1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_3emultipole1(max_am));
+assert(max_am <= 0);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_3emultipole1 * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_sphemultipole1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_sphemultipole1(max_am));
+assert(max_am <= 0);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_sphemultipole1 * LIBINT2_MAX_VECLEN;
+}
 void libint2_init_eri(Libint_t* inteval, int max_am, void* buf) {
 if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
 else 
@@ -462,6 +677,35 @@ inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_6_eri * LIBINT2_MAX_VE
 assert(max_am <= 7);
 if (max_am == 7)
 inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_eri * LIBINT2_MAX_VECLEN;
+}
+void libint2_init_eri1(Libint_t* inteval, int max_am, void* buf) {
+if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
+else 
+inteval->stack = libint2::malloc<LIBINT2_REALTYPE>(libint2_need_memory_eri1(max_am));
+assert(max_am <= 7);
+if (max_am == 0)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_0_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 1)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_1_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 2)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_2_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 3)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_3_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 4)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_4_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 5)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_5_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 6)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_6_eri1 * LIBINT2_MAX_VECLEN;
+assert(max_am <= 7);
+if (max_am == 7)
+inteval->vstack = inteval->stack + LIBINT2_MAX_STACK_SIZE_7_eri1 * LIBINT2_MAX_VECLEN;
 }
 void libint2_init_3eri(Libint_t* inteval, int max_am, void* buf) {
 if (buf != 0) inteval->stack = reinterpret_cast<LIBINT2_REALTYPE*>(buf);
@@ -561,7 +805,47 @@ free(inteval->stack);
 inteval->stack = 0;
 inteval->vstack = 0;
 }
+void libint2_cleanup_overlap1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_kinetic1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_elecpot1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_1emultipole1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_2emultipole1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_3emultipole1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_sphemultipole1(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
 void libint2_cleanup_eri(Libint_t* inteval) {
+free(inteval->stack);
+inteval->stack = 0;
+inteval->vstack = 0;
+}
+void libint2_cleanup_eri1(Libint_t* inteval) {
 free(inteval->stack);
 inteval->stack = 0;
 inteval->vstack = 0;

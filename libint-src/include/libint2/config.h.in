@@ -1,6 +1,6 @@
 /* include/libint2/config.h.  Generated from config.h.in by configure.  */
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -34,13 +34,13 @@
 #define LIBINT_TARGET_ARCH "x86_64-pc-linux-gnu"
 
 /* The version number. */
-#define LIBINT_VERSION "2.5.0-beta.2"
+#define LIBINT_VERSION "2.7.0-beta.3"
 
 /* The major version number. */
 #define LIBINT_MAJOR_VERSION 2
 
 /* The minor version number. */
-#define LIBINT_MINOR_VERSION 5
+#define LIBINT_MINOR_VERSION 7
 
 /* The micro version number. */
 #define LIBINT_MICRO_VERSION 0
@@ -61,13 +61,13 @@
 /* #undef LIBINT_OPT_AM_LIST */
 
 /* Support 1-body derivatives up to this order */
-#define INCLUDE_ONEBODY 0
+#define INCLUDE_ONEBODY 1
 
 /* Disable support for 1-body property derivatives */
 #define DISABLE_ONEBODY_PROPERTY_DERIVS 1
 
 /* Support ERI derivatives up to this order */
-#define INCLUDE_ERI 0
+#define INCLUDE_ERI 1
 
 /* Support 3-center ERI derivatives up to this order */
 #define INCLUDE_ERI3 0
@@ -148,7 +148,7 @@
 /* #undef G12DKH_OPT_AM */
 
 /* Whether integral sets can be unrolled */
-/* #undef LIBINT_ENABLE_UNROLLING */
+#define LIBINT_ENABLE_UNROLLING 100
 
 /* Whether generic code can be used */
 #define LIBINT_ENABLE_GENERIC_CODE 1
@@ -262,7 +262,8 @@
 /* #undef HAVE_SHARED_PTR_IN_BOOST */
 
 /* define if Eigen library is available. */
-#define LIBINT_HAS_EIGEN 1
+
+/* define if system-wide Boost.Preprocessor is available */
 
 /*
   Known orderings of cartesian Gaussians
@@ -305,4 +306,6 @@
 #undef LIBINT_HAS_MPFR
 #undef LIBINT2_REALTYPE
 #undef LIBINT_SHGSHELL_ORDERING
+#undef LIBINT_HAS_EIGEN
+#undef LIBINT_HAS_SYSTEM_BOOST_PREPROCESSOR_VARIADICS
 #endif /* header guard #2 */

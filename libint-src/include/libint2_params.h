@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -82,6 +82,10 @@
 # define LIBINT2_MAX_AM_default 7
 #endif
 
+#ifndef LIBINT2_MAX_AM_default1
+# define LIBINT2_MAX_AM_default1 7
+#endif
+
 #ifndef LIBINT2_MAX_AM_overlap
 # define LIBINT2_MAX_AM_overlap 7
 #endif
@@ -110,8 +114,40 @@
 # define LIBINT2_MAX_AM_sphemultipole 7
 #endif
 
+#ifndef LIBINT2_MAX_AM_overlap1
+# define LIBINT2_MAX_AM_overlap1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_kinetic1
+# define LIBINT2_MAX_AM_kinetic1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_elecpot1
+# define LIBINT2_MAX_AM_elecpot1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_1emultipole1
+# define LIBINT2_MAX_AM_1emultipole1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_2emultipole1
+# define LIBINT2_MAX_AM_2emultipole1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_3emultipole1
+# define LIBINT2_MAX_AM_3emultipole1 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_sphemultipole1
+# define LIBINT2_MAX_AM_sphemultipole1 7
+#endif
+
 #ifndef LIBINT2_MAX_AM_eri
 # define LIBINT2_MAX_AM_eri 7
+#endif
+
+#ifndef LIBINT2_MAX_AM_eri1
+# define LIBINT2_MAX_AM_eri1 7
 #endif
 
 #ifndef LIBINT2_MAX_AM_3eri
@@ -127,7 +163,7 @@
 #endif
 
 #ifndef LIBINT2_DERIV_ONEBODY_ORDER
-# define LIBINT2_DERIV_ONEBODY_ORDER 0
+# define LIBINT2_DERIV_ONEBODY_ORDER 1
 #endif
 
 #ifndef LIBINT2_DERIV_ONEBODY_PROPERTY_ORDER
@@ -139,7 +175,7 @@
 #endif
 
 #ifndef LIBINT2_DERIV_ERI_ORDER
-# define LIBINT2_DERIV_ERI_ORDER 0
+# define LIBINT2_DERIV_ERI_ORDER 1
 #endif
 
 #ifndef LIBINT2_SUPPORT_ERI3
@@ -159,7 +195,7 @@
 #endif
 
 #ifndef LIBINT2_MAX_DERIV_ORDER
-# define LIBINT2_MAX_DERIV_ORDER 0
+# define LIBINT2_MAX_DERIV_ORDER 1
 #endif
 
 #ifndef LIBINT2_TASK_EXISTS_0overlap
@@ -214,6 +250,58 @@
 # define LIBINT2_TASK_EXISTS_0g12dkh 0
 #endif
 
+#ifndef LIBINT2_TASK_EXISTS_0overlap1
+# define LIBINT2_TASK_EXISTS_0overlap1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0kinetic1
+# define LIBINT2_TASK_EXISTS_0kinetic1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0elecpot1
+# define LIBINT2_TASK_EXISTS_0elecpot1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_01emultipole1
+# define LIBINT2_TASK_EXISTS_01emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_02emultipole1
+# define LIBINT2_TASK_EXISTS_02emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_03emultipole1
+# define LIBINT2_TASK_EXISTS_03emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0sphemultipole1
+# define LIBINT2_TASK_EXISTS_0sphemultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0eri1
+# define LIBINT2_TASK_EXISTS_0eri1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0r12kg121
+# define LIBINT2_TASK_EXISTS_0r12kg121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0r12_0_g121
+# define LIBINT2_TASK_EXISTS_0r12_0_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0r12_2_g121
+# define LIBINT2_TASK_EXISTS_0r12_2_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0g12_T1_g121
+# define LIBINT2_TASK_EXISTS_0g12_T1_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_0g12dkh1
+# define LIBINT2_TASK_EXISTS_0g12dkh1 0
+#endif
+
 #ifndef LIBINT2_TASK_EXISTS_1overlap
 # define LIBINT2_TASK_EXISTS_1overlap 0
 #endif
@@ -264,6 +352,58 @@
 
 #ifndef LIBINT2_TASK_EXISTS_1g12dkh
 # define LIBINT2_TASK_EXISTS_1g12dkh 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1overlap1
+# define LIBINT2_TASK_EXISTS_1overlap1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1kinetic1
+# define LIBINT2_TASK_EXISTS_1kinetic1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1elecpot1
+# define LIBINT2_TASK_EXISTS_1elecpot1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_11emultipole1
+# define LIBINT2_TASK_EXISTS_11emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_12emultipole1
+# define LIBINT2_TASK_EXISTS_12emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_13emultipole1
+# define LIBINT2_TASK_EXISTS_13emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1sphemultipole1
+# define LIBINT2_TASK_EXISTS_1sphemultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1eri1
+# define LIBINT2_TASK_EXISTS_1eri1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1r12kg121
+# define LIBINT2_TASK_EXISTS_1r12kg121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1r12_0_g121
+# define LIBINT2_TASK_EXISTS_1r12_0_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1r12_2_g121
+# define LIBINT2_TASK_EXISTS_1r12_2_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1g12_T1_g121
+# define LIBINT2_TASK_EXISTS_1g12_T1_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_1g12dkh1
+# define LIBINT2_TASK_EXISTS_1g12dkh1 0
 #endif
 
 #ifndef LIBINT2_TASK_EXISTS_2overlap
@@ -318,6 +458,58 @@
 # define LIBINT2_TASK_EXISTS_2g12dkh 0
 #endif
 
+#ifndef LIBINT2_TASK_EXISTS_2overlap1
+# define LIBINT2_TASK_EXISTS_2overlap1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2kinetic1
+# define LIBINT2_TASK_EXISTS_2kinetic1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2elecpot1
+# define LIBINT2_TASK_EXISTS_2elecpot1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_21emultipole1
+# define LIBINT2_TASK_EXISTS_21emultipole1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_22emultipole1
+# define LIBINT2_TASK_EXISTS_22emultipole1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_23emultipole1
+# define LIBINT2_TASK_EXISTS_23emultipole1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2sphemultipole1
+# define LIBINT2_TASK_EXISTS_2sphemultipole1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2eri1
+# define LIBINT2_TASK_EXISTS_2eri1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2r12kg121
+# define LIBINT2_TASK_EXISTS_2r12kg121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2r12_0_g121
+# define LIBINT2_TASK_EXISTS_2r12_0_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2r12_2_g121
+# define LIBINT2_TASK_EXISTS_2r12_2_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2g12_T1_g121
+# define LIBINT2_TASK_EXISTS_2g12_T1_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_2g12dkh1
+# define LIBINT2_TASK_EXISTS_2g12dkh1 0
+#endif
+
 #ifndef LIBINT2_TASK_EXISTS_3overlap
 # define LIBINT2_TASK_EXISTS_3overlap 0
 #endif
@@ -368,6 +560,58 @@
 
 #ifndef LIBINT2_TASK_EXISTS_3g12dkh
 # define LIBINT2_TASK_EXISTS_3g12dkh 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3overlap1
+# define LIBINT2_TASK_EXISTS_3overlap1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3kinetic1
+# define LIBINT2_TASK_EXISTS_3kinetic1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3elecpot1
+# define LIBINT2_TASK_EXISTS_3elecpot1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_31emultipole1
+# define LIBINT2_TASK_EXISTS_31emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_32emultipole1
+# define LIBINT2_TASK_EXISTS_32emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_33emultipole1
+# define LIBINT2_TASK_EXISTS_33emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3sphemultipole1
+# define LIBINT2_TASK_EXISTS_3sphemultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3eri1
+# define LIBINT2_TASK_EXISTS_3eri1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3r12kg121
+# define LIBINT2_TASK_EXISTS_3r12kg121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3r12_0_g121
+# define LIBINT2_TASK_EXISTS_3r12_0_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3r12_2_g121
+# define LIBINT2_TASK_EXISTS_3r12_2_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3g12_T1_g121
+# define LIBINT2_TASK_EXISTS_3g12_T1_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_3g12dkh1
+# define LIBINT2_TASK_EXISTS_3g12dkh1 0
 #endif
 
 #ifndef LIBINT2_TASK_EXISTS_4overlap
@@ -422,6 +666,58 @@
 # define LIBINT2_TASK_EXISTS_4g12dkh 0
 #endif
 
+#ifndef LIBINT2_TASK_EXISTS_4overlap1
+# define LIBINT2_TASK_EXISTS_4overlap1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4kinetic1
+# define LIBINT2_TASK_EXISTS_4kinetic1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4elecpot1
+# define LIBINT2_TASK_EXISTS_4elecpot1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_41emultipole1
+# define LIBINT2_TASK_EXISTS_41emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_42emultipole1
+# define LIBINT2_TASK_EXISTS_42emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_43emultipole1
+# define LIBINT2_TASK_EXISTS_43emultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4sphemultipole1
+# define LIBINT2_TASK_EXISTS_4sphemultipole1 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4eri1
+# define LIBINT2_TASK_EXISTS_4eri1 1
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4r12kg121
+# define LIBINT2_TASK_EXISTS_4r12kg121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4r12_0_g121
+# define LIBINT2_TASK_EXISTS_4r12_0_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4r12_2_g121
+# define LIBINT2_TASK_EXISTS_4r12_2_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4g12_T1_g121
+# define LIBINT2_TASK_EXISTS_4g12_T1_g121 0
+#endif
+
+#ifndef LIBINT2_TASK_EXISTS_4g12dkh1
+# define LIBINT2_TASK_EXISTS_4g12dkh1 0
+#endif
+
 #define LIBINT2_NUM_TARGETS_default 1
 #define LIBINT2_MAX_STACK_SIZE_0_default 1
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_default 0
@@ -461,7 +757,7 @@
 #define LIBINT2_MAX_HRR_HSRANK_7_overlap 0
 #define LIBINT2_MAX_HRR_LSRANK_7_overlap 0
 #define LIBINT2_NUM_TARGETS_kinetic 1
-#define LIBINT2_MAX_STACK_SIZE_0_kinetic 13
+#define LIBINT2_MAX_STACK_SIZE_0_kinetic 1
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_kinetic 0
 #define LIBINT2_MAX_HRR_HSRANK_0_kinetic 0
 #define LIBINT2_MAX_HRR_LSRANK_0_kinetic 0
@@ -527,7 +823,7 @@
 #define LIBINT2_MAX_HRR_HSRANK_7_elecpot 0
 #define LIBINT2_MAX_HRR_LSRANK_7_elecpot 0
 #define LIBINT2_NUM_TARGETS_1emultipole 4
-#define LIBINT2_MAX_STACK_SIZE_0_1emultipole 10
+#define LIBINT2_MAX_STACK_SIZE_0_1emultipole 4
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_1emultipole 0
 #define LIBINT2_MAX_HRR_HSRANK_0_1emultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_0_1emultipole 0
@@ -560,7 +856,7 @@
 #define LIBINT2_MAX_HRR_HSRANK_7_1emultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_7_1emultipole 0
 #define LIBINT2_NUM_TARGETS_2emultipole 10
-#define LIBINT2_MAX_STACK_SIZE_0_2emultipole 25
+#define LIBINT2_MAX_STACK_SIZE_0_2emultipole 10
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_2emultipole 0
 #define LIBINT2_MAX_HRR_HSRANK_0_2emultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_0_2emultipole 0
@@ -593,7 +889,7 @@
 #define LIBINT2_MAX_HRR_HSRANK_7_2emultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_7_2emultipole 0
 #define LIBINT2_NUM_TARGETS_3emultipole 20
-#define LIBINT2_MAX_STACK_SIZE_0_3emultipole 47
+#define LIBINT2_MAX_STACK_SIZE_0_3emultipole 20
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_3emultipole 0
 #define LIBINT2_MAX_HRR_HSRANK_0_3emultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_0_3emultipole 0
@@ -658,6 +954,125 @@
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_7_sphemultipole 0
 #define LIBINT2_MAX_HRR_HSRANK_7_sphemultipole 0
 #define LIBINT2_MAX_HRR_LSRANK_7_sphemultipole 0
+#define LIBINT2_NUM_TARGETS_overlap1 6
+#define LIBINT2_MAX_STACK_SIZE_0_overlap1 6
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_1_overlap1 491
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_1_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_1_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_1_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_2_overlap1 1374
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_2_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_2_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_2_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_3_overlap1 2705
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_3_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_3_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_3_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_4_overlap1 4468
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_4_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_4_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_4_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_5_overlap1 6663
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_5_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_5_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_5_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_6_overlap1 9576
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_6_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_6_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_6_overlap1 0
+#define LIBINT2_MAX_STACK_SIZE_7_overlap1 15768
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_7_overlap1 0
+#define LIBINT2_MAX_HRR_HSRANK_7_overlap1 0
+#define LIBINT2_MAX_HRR_LSRANK_7_overlap1 0
+#define LIBINT2_NUM_TARGETS_kinetic1 6
+#define LIBINT2_MAX_STACK_SIZE_0_kinetic1 6
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_1_kinetic1 519
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_1_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_1_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_1_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_2_kinetic1 1422
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_2_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_2_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_2_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_3_kinetic1 2757
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_3_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_3_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_3_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_4_kinetic1 4524
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_4_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_4_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_4_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_5_kinetic1 6723
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_5_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_5_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_5_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_6_kinetic1 9624
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_6_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_6_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_6_kinetic1 0
+#define LIBINT2_MAX_STACK_SIZE_7_kinetic1 15822
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_7_kinetic1 0
+#define LIBINT2_MAX_HRR_HSRANK_7_kinetic1 0
+#define LIBINT2_MAX_HRR_LSRANK_7_kinetic1 0
+#define LIBINT2_NUM_TARGETS_elecpot1 6
+#define LIBINT2_MAX_STACK_SIZE_0_elecpot1 6
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_1_elecpot1 651
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_1_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_1_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_1_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_2_elecpot1 1313
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_2_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_2_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_2_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_3_elecpot1 3219
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_3_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_3_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_3_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_4_elecpot1 6373
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_4_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_4_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_4_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_5_elecpot1 11440
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_5_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_5_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_5_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_6_elecpot1 20089
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_6_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_6_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_6_elecpot1 0
+#define LIBINT2_MAX_STACK_SIZE_7_elecpot1 36331
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_7_elecpot1 0
+#define LIBINT2_MAX_HRR_HSRANK_7_elecpot1 0
+#define LIBINT2_MAX_HRR_LSRANK_7_elecpot1 0
+#define LIBINT2_NUM_TARGETS_1emultipole1 1
+#define LIBINT2_MAX_STACK_SIZE_0_1emultipole1 1
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_1emultipole1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_1emultipole1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_1emultipole1 0
+#define LIBINT2_NUM_TARGETS_2emultipole1 1
+#define LIBINT2_MAX_STACK_SIZE_0_2emultipole1 1
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_2emultipole1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_2emultipole1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_2emultipole1 0
+#define LIBINT2_NUM_TARGETS_3emultipole1 1
+#define LIBINT2_MAX_STACK_SIZE_0_3emultipole1 1
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_3emultipole1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_3emultipole1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_3emultipole1 0
+#define LIBINT2_NUM_TARGETS_sphemultipole1 1
+#define LIBINT2_MAX_STACK_SIZE_0_sphemultipole1 1
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_sphemultipole1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_sphemultipole1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_sphemultipole1 0
 #define LIBINT2_NUM_TARGETS_eri 1
 #define LIBINT2_MAX_STACK_SIZE_0_eri 1
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_eri 0
@@ -691,6 +1106,39 @@
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_7_eri 0
 #define LIBINT2_MAX_HRR_HSRANK_7_eri 0
 #define LIBINT2_MAX_HRR_LSRANK_7_eri 0
+#define LIBINT2_NUM_TARGETS_eri1 12
+#define LIBINT2_MAX_STACK_SIZE_0_eri1 12
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_0_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_0_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_0_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_1_eri1 162228
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_1_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_1_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_1_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_2_eri1 668248
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_2_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_2_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_2_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_3_eri1 2453442
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_3_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_3_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_3_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_4_eri1 7512090
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_4_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_4_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_4_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_5_eri1 16147805
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_5_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_5_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_5_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_6_eri1 31294028
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_6_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_6_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_6_eri1 0
+#define LIBINT2_MAX_STACK_SIZE_7_eri1 73736309
+#define LIBINT2_MAX_VECTOR_STACK_SIZE_7_eri1 0
+#define LIBINT2_MAX_HRR_HSRANK_7_eri1 0
+#define LIBINT2_MAX_HRR_LSRANK_7_eri1 0
 #define LIBINT2_NUM_TARGETS_3eri 1
 #define LIBINT2_MAX_STACK_SIZE_0_3eri 1
 #define LIBINT2_MAX_VECTOR_STACK_SIZE_0_3eri 0

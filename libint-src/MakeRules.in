@@ -1,9 +1,11 @@
 
+-include ./MakeVars
+
 all:: default
 
 default:: $(TOPDIR)/lib/$(TARGET)
 
-INSTALL_TARGETS = install_inc install_target install_pkgconfig install_data
+INSTALL_TARGETS = install_inc install_target install_pkgconfig install_cmake install_cmake install_data
 
 ifeq ($(ENABLE_FORTRAN),yes)
     INSTALL_TARGETS += install_fortran
@@ -26,11 +28,15 @@ install_inc:: $(TOPDIR)/lib/$(TARGET)
 	-$(INSTALL) $(INSTALLLIBOPT) $(SRCTOPDIR)/include/libint2/util/*.h $(DESTDIR)$(includedir)/$(NAME)$(VERSION)/util
 	$(INSTALL) $(INSTALLDIROPT) $(DESTDIR)$(includedir)/$(NAME)$(VERSION)/util/generated
 	-$(INSTALL) $(INSTALLLIBOPT) $(SRCTOPDIR)/include/libint2/util/generated/*.h $(DESTDIR)$(includedir)/$(NAME)$(VERSION)/util/generated
-	gunzip -c $(SRCTOPDIR)/external/boost.tar.gz | tar -xf - -C $(DESTDIR)$(includedir)/$(NAME)$(VERSION)
+	if test "X$(HAVE_SYSTEM_BOOST_PREPROCESSOR_VARIADICS)" = "X0"; then `gunzip -c $(SRCTOPDIR)/external/boost.tar.gz | tar -xf - -C $(DESTDIR)$(includedir)/$(NAME)$(VERSION)`; fi
 
 install_pkgconfig::
 	$(INSTALL) $(INSTALLDIROPT) $(DESTDIR)$(pkgconfigdir)
 	$(INSTALL) $(INSTALLLIBOPT) $(TOPDIR)/libint2.pc $(DESTDIR)$(pkgconfigdir)
+
+install_cmake::
+	$(INSTALL) $(INSTALLDIROPT) $(DESTDIR)$(cmakedir)
+	$(INSTALL) $(INSTALLLIBOPT) $(SRCTOPDIR)/FindLibint2.cmake $(DESTDIR)$(cmakedir)
 
 install_data::
 	$(INSTALL) $(INSTALLDIROPT) $(DESTDIR)$(datadir)/basis

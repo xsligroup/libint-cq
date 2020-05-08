@@ -6,8 +6,10 @@
 #define _libint2_include_numeric_h_
 
 #include <libint2/config.h>
-#include <sstream>
 #include <iomanip>
+#include <limits>
+#include <sstream>
+#include <type_traits>
 
 #if LIBINT_HAS_MPFR
 # include <cstddef>
@@ -47,6 +49,10 @@
    if (a < 0)
      result = 1.0 / result;
    return result;
+ }
+ /// this is needed to avoid ambiguity in pow(2.0, 2) ... the above pow competes with standard double pow(double, double)
+ inline double pow(double x, int a) {
+   return std::pow(x, static_cast<double>(a));
  }
  /// implement erf for mpf_class using MPFR ... I do not claim to know what issues the rounding presents here
  inline mpf_class erf(mpf_class x) {
@@ -123,12 +129,18 @@ inline int get_max_digits10(const Real& value) {
 }
 
 template <typename To, typename From>
-  To sstream_convert(From && from) {
-    std::stringstream ss;
-    ss << std::scientific << std::setprecision(get_max_digits10(from)) << from;
-    To to(ss.str().c_str());
-    return to;
-  }
+typename std::enable_if<!std::is_same<typename std::decay<To>::type, typename std::decay<From>::type >::value,To>::type
+sstream_convert(From && from) {
+  std::stringstream ss;
+  ss << std::scientific << std::setprecision(get_max_digits10(from)) << from;
+  To to(ss.str().c_str());
+  return to;
+}
+
+template <typename To>
+To sstream_convert(const To& from) {
+  return from;
+}
 
 };  // namespace libint2
 

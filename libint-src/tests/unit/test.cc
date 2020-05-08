@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2018 Edward F. Valeev
+ *  Copyright (C) 2018-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -22,7 +22,9 @@
 
 #include "catch.hpp"
 #include <libint2.hpp>
-#include <libint2/statics_definition.h>
+#if !LIBINT2_CONSTEXPR_STATICS
+#  include <libint2/statics_definition.h>
+#endif
 
 int main( int argc, char* argv[] )
 {

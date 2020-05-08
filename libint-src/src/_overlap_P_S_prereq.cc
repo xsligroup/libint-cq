@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -19,10 +19,6 @@
  */
 
 #include <libint2.h>
-#include <CR_aB_X1__0___Overlap_X0__0___Ab__up_.h>
-#include <CR_aB_Y1__0___Overlap_Y0__0___Ab__up_.h>
-#include <CR_aB_Z1__0___Overlap_Z0__0___Ab__up_.h>
-#include <CR_aB_p__0___CartesianMultipole_sB_0_c_0_c_0_Sb__s__0___Ab__up_.h>
 #include <GenericContract.h>
 
 #ifdef __cplusplus
@@ -37,18 +33,58 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-CR_aB_Z1__0___Overlap_Z0__0___Ab__up_(inteval, &(stack[((hsi*2+3)*1+lsi)*1]), &(inteval->_0_Overlap_0_z[vi]));
-CR_aB_Y1__0___Overlap_Y0__0___Ab__up_(inteval, &(stack[((hsi*2+5)*1+lsi)*1]), &(inteval->_0_Overlap_0_y[vi]));
-CR_aB_X1__0___Overlap_X0__0___Ab__up_(inteval, &(stack[((hsi*2+7)*1+lsi)*1]), &(inteval->_0_Overlap_0_x[vi]));
-CR_aB_p__0___CartesianMultipole_sB_0_c_0_c_0_Sb__s__0___Ab__up_(inteval, &(stack[((hsi*3+9)*1+lsi)*1]), &(stack[((hsi*2+7)*1+lsi)*1]), &(stack[((hsi*2+5)*1+lsi)*1]), &(stack[((hsi*2+3)*1+lsi)*1]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(stack[((hsi*3+9)*1+lsi)*1]),3);
+LIBINT2_REALTYPE fp4;
+fp4 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_z[vi];
+LIBINT2_REALTYPE fp3;
+fp3 = inteval->PA_z[vi] * fp4;
+LIBINT2_REALTYPE fp9;
+fp9 = 0.0000000000000000e+00 + fp3;
+LIBINT2_REALTYPE fp6;
+fp6 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_y[vi];
+LIBINT2_REALTYPE fp12;
+fp12 = 0.0000000000000000e+00 + fp6;
+LIBINT2_REALTYPE fp7;
+fp7 = 0.0000000000000000e+00 + inteval->_0_Overlap_0_x[vi];
+LIBINT2_REALTYPE fp13;
+fp13 = 0.0000000000000000e+00 + fp7;
+LIBINT2_REALTYPE fp16;
+fp16 = fp13 * fp12;
+LIBINT2_REALTYPE fp15;
+fp15 = fp16 * fp9;
+LIBINT2_REALTYPE fp2;
+fp2 = fp15;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+2)*1+lsi)*1]),&(fp2),1);
+LIBINT2_REALTYPE fp10;
+fp10 = 0.0000000000000000e+00 + fp4;
+LIBINT2_REALTYPE fp5;
+fp5 = inteval->PA_y[vi] * fp6;
+LIBINT2_REALTYPE fp11;
+fp11 = 0.0000000000000000e+00 + fp5;
+LIBINT2_REALTYPE fp18;
+fp18 = fp13 * fp11;
+LIBINT2_REALTYPE fp17;
+fp17 = fp18 * fp10;
+LIBINT2_REALTYPE fp1;
+fp1 = fp17;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+1)*1+lsi)*1]),&(fp1),1);
+LIBINT2_REALTYPE fp8;
+fp8 = inteval->PA_x[vi] * fp7;
+LIBINT2_REALTYPE fp14;
+fp14 = 0.0000000000000000e+00 + fp8;
+LIBINT2_REALTYPE fp20;
+fp20 = fp14 * fp12;
+LIBINT2_REALTYPE fp19;
+fp19 = fp20 * fp10;
+LIBINT2_REALTYPE fp0;
+fp0 = fp19;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(fp0),1);
 }
 }
 }
 const int hsi = 0;
 const int lsi = 0;
 const int vi = 0;
-/** Number of flops = 3 */
+/** Number of flops = 21 */
 }
 
 #ifdef __cplusplus

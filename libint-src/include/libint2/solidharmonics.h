@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -561,12 +561,12 @@ namespace libint2 {
         auto target_blk_s1 = target_blk + s1 * ncol;
 
         // loop over cols
-        for(auto c2=0; c2!=ncol; ++c2) {
+        for(decltype(ncol) c2=0; c2!=ncol; ++c2) {
 
           Real s1_c2_value = 0.0;
           auto source_blk_c2_offset = source_blk + c2;
 
-          for(size_t ic1=0; ic1!=nc1; ++ic1) { // loop over contributing cartesians
+          for(std::size_t ic1=0; ic1!=nc1; ++ic1) { // loop over contributing cartesians
             auto c1 = c1_idxs[ic1];
             auto s1_c1_coeff = c1_vals[ic1];
 

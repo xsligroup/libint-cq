@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004-2018 Edward F. Valeev
+ *  Copyright (C) 2004-2020 Edward F. Valeev
  *
  *  This file is part of Libint.
  *
@@ -20,7 +20,6 @@
 
 #include <libint2.h>
 #include <GenericContract.h>
-#include <OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__s__1___Ab__up_0.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,15 +33,28 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-OSVRRP0InBra_aB_p__0__s__1___TwoPRep_unit__0__s__1___Ab__up_0(inteval, &(stack[((hsi*3+3)*1+lsi)*1]), &(inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(stack[((hsi*3+3)*1+lsi)*1]),3);
+LIBINT2_REALTYPE fp3;
+fp3 = inteval->WP_z[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp2;
+fp2 = fp3;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+2)*1+lsi)*1]),&(fp2),1);
+LIBINT2_REALTYPE fp4;
+fp4 = inteval->WP_y[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp1;
+fp1 = fp4;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+1)*1+lsi)*1]),&(fp1),1);
+LIBINT2_REALTYPE fp5;
+fp5 = inteval->WP_x[vi] * inteval->_aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1[vi];
+LIBINT2_REALTYPE fp0;
+fp0 = fp5;
+_libint2_static_api_inc1_short_(&(stack[((hsi*3+0)*1+lsi)*1]),&(fp0),1);
 }
 }
 }
 const int hsi = 0;
 const int lsi = 0;
 const int vi = 0;
-/** Number of flops = 3 */
+/** Number of flops = 6 */
 }
 
 #ifdef __cplusplus

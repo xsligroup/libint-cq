@@ -2,6 +2,10 @@
 #include <GenericGaussDeriv.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void CR_DerivGaussP0InKet_aB_s__0___ElecPot_k010__0___Ab__up_0(const Libint_t* inteval, LIBINT2_REALTYPE* target, const LIBINT2_REALTYPE* src0, const LIBINT2_REALTYPE* src1) {
@@ -12,4 +16,6 @@ libint2::GenericGaussDeriv<7,false>::compute(inteval,target,src0,src1,1,1,1,inte
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

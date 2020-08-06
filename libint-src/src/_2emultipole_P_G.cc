@@ -22,6 +22,10 @@
 #include <_2emultipole_P_G_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _2emultipole_P_G(const Libint_t* inteval) {
@@ -63,4 +67,6 @@ inteval->targets[9] = &(inteval->stack[((hsi*45+405)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

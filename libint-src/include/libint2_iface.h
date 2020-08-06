@@ -27,27 +27,43 @@
 # include <stddef.h>
 #endif
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
-extern void (*libint2_build_default[8][8][8][8])(const Libint_t*);
-extern void (*libint2_build_overlap[8][8])(const Libint_t*);
-extern void (*libint2_build_kinetic[8][8])(const Libint_t*);
-extern void (*libint2_build_elecpot[8][8])(const Libint_t*);
-extern void (*libint2_build_1emultipole[8][8])(const Libint_t*);
-extern void (*libint2_build_2emultipole[8][8])(const Libint_t*);
-extern void (*libint2_build_3emultipole[8][8])(const Libint_t*);
-extern void (*libint2_build_sphemultipole[8][8])(const Libint_t*);
-extern void (*libint2_build_overlap1[8][8])(const Libint_t*);
-extern void (*libint2_build_kinetic1[8][8])(const Libint_t*);
-extern void (*libint2_build_elecpot1[8][8])(const Libint_t*);
-extern void (*libint2_build_1emultipole1[8][8])(const Libint_t*);
-extern void (*libint2_build_2emultipole1[8][8])(const Libint_t*);
-extern void (*libint2_build_3emultipole1[8][8])(const Libint_t*);
-extern void (*libint2_build_sphemultipole1[8][8])(const Libint_t*);
-extern void (*libint2_build_eri[8][8][8][8])(const Libint_t*);
-extern void (*libint2_build_eri1[8][8][8][8])(const Libint_t*);
-extern void (*libint2_build_3eri[8][8][8])(const Libint_t*);
-extern void (*libint2_build_2eri[8][8])(const Libint_t*);
+extern void (*libint2_build_default[6][6][6][6])(const Libint_t*);
+extern void (*libint2_build_overlap[6][6])(const Libint_t*);
+extern void (*libint2_build_kinetic[6][6])(const Libint_t*);
+extern void (*libint2_build_elecpot[6][6])(const Libint_t*);
+extern void (*libint2_build_1emultipole[6][6])(const Libint_t*);
+extern void (*libint2_build_2emultipole[6][6])(const Libint_t*);
+extern void (*libint2_build_3emultipole[6][6])(const Libint_t*);
+extern void (*libint2_build_sphemultipole[6][6])(const Libint_t*);
+extern void (*libint2_build_overlap1[6][6])(const Libint_t*);
+extern void (*libint2_build_kinetic1[6][6])(const Libint_t*);
+extern void (*libint2_build_elecpot1[6][6])(const Libint_t*);
+extern void (*libint2_build_1emultipole1[6][6])(const Libint_t*);
+extern void (*libint2_build_2emultipole1[6][6])(const Libint_t*);
+extern void (*libint2_build_3emultipole1[6][6])(const Libint_t*);
+extern void (*libint2_build_sphemultipole1[6][6])(const Libint_t*);
+extern void (*libint2_build_overlap2[6][6])(const Libint_t*);
+extern void (*libint2_build_kinetic2[6][6])(const Libint_t*);
+extern void (*libint2_build_elecpot2[6][6])(const Libint_t*);
+extern void (*libint2_build_1emultipole2[6][6])(const Libint_t*);
+extern void (*libint2_build_2emultipole2[6][6])(const Libint_t*);
+extern void (*libint2_build_3emultipole2[6][6])(const Libint_t*);
+extern void (*libint2_build_sphemultipole2[6][6])(const Libint_t*);
+extern void (*libint2_build_eri[6][6][6][6])(const Libint_t*);
+extern void (*libint2_build_eri1[6][6][6][6])(const Libint_t*);
+extern void (*libint2_build_eri2[6][6][6][6])(const Libint_t*);
+extern void (*libint2_build_3eri[6][6][6])(const Libint_t*);
+extern void (*libint2_build_3eri1[6][6][6])(const Libint_t*);
+extern void (*libint2_build_3eri2[6][6][6])(const Libint_t*);
+extern void (*libint2_build_2eri[6][6])(const Libint_t*);
+extern void (*libint2_build_2eri1[6][6])(const Libint_t*);
+extern void (*libint2_build_2eri2[6][6])(const Libint_t*);
 void libint2_static_init();
 void libint2_static_cleanup();
 void libint2_init_default(Libint_t* inteval, int max_am, void* buf);
@@ -95,20 +111,58 @@ void libint2_cleanup_3emultipole1(Libint_t* inteval);
 void libint2_init_sphemultipole1(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_sphemultipole1(int max_am);
 void libint2_cleanup_sphemultipole1(Libint_t* inteval);
+void libint2_init_overlap2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_overlap2(int max_am);
+void libint2_cleanup_overlap2(Libint_t* inteval);
+void libint2_init_kinetic2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_kinetic2(int max_am);
+void libint2_cleanup_kinetic2(Libint_t* inteval);
+void libint2_init_elecpot2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_elecpot2(int max_am);
+void libint2_cleanup_elecpot2(Libint_t* inteval);
+void libint2_init_1emultipole2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_1emultipole2(int max_am);
+void libint2_cleanup_1emultipole2(Libint_t* inteval);
+void libint2_init_2emultipole2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_2emultipole2(int max_am);
+void libint2_cleanup_2emultipole2(Libint_t* inteval);
+void libint2_init_3emultipole2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_3emultipole2(int max_am);
+void libint2_cleanup_3emultipole2(Libint_t* inteval);
+void libint2_init_sphemultipole2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_sphemultipole2(int max_am);
+void libint2_cleanup_sphemultipole2(Libint_t* inteval);
 void libint2_init_eri(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_eri(int max_am);
 void libint2_cleanup_eri(Libint_t* inteval);
 void libint2_init_eri1(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_eri1(int max_am);
 void libint2_cleanup_eri1(Libint_t* inteval);
+void libint2_init_eri2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_eri2(int max_am);
+void libint2_cleanup_eri2(Libint_t* inteval);
 void libint2_init_3eri(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_3eri(int max_am);
 void libint2_cleanup_3eri(Libint_t* inteval);
+void libint2_init_3eri1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_3eri1(int max_am);
+void libint2_cleanup_3eri1(Libint_t* inteval);
+void libint2_init_3eri2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_3eri2(int max_am);
+void libint2_cleanup_3eri2(Libint_t* inteval);
 void libint2_init_2eri(Libint_t* inteval, int max_am, void* buf);
 size_t libint2_need_memory_2eri(int max_am);
 void libint2_cleanup_2eri(Libint_t* inteval);
+void libint2_init_2eri1(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_2eri1(int max_am);
+void libint2_cleanup_2eri1(Libint_t* inteval);
+void libint2_init_2eri2(Libint_t* inteval, int max_am, void* buf);
+size_t libint2_need_memory_2eri2(int max_am);
+void libint2_cleanup_2eri2(Libint_t* inteval);
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif
 
 /** Use LIBINT2_PREFIXED_NAME(fncname) to form properly prefixed function name from LIBINT2 API */

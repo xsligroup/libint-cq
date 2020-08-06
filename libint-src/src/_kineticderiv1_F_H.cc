@@ -22,6 +22,10 @@
 #include <_kineticderiv1_F_H_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _kineticderiv1_F_H(const Libint_t* inteval) {
@@ -59,4 +63,6 @@ inteval->targets[5] = &(inteval->stack[((hsi*210+1050)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

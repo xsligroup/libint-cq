@@ -53,12 +53,6 @@ LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_10[LIBINT2_MAX_VECLEN];
 LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_11[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_12 1
 LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_12[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_13 1
-LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_13[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_14 1
-LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_14[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0___ElecPot_s___0___Ab__up_15 1
-LIBINT2_REALTYPE _aB_s___0___ElecPot_s___0___Ab__up_15[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0 1
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_0[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_1 1
@@ -105,20 +99,6 @@ LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_20[LIBINT2_MAX
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_21[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_22 1
 LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_22[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_23 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_23[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_24 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_24[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_25 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_25[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_26 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_26[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_27 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_27[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_28 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_28[LIBINT2_MAX_VECLEN];
-#define LIBINT2_DEFINED__aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_29 1
-LIBINT2_REALTYPE _aB_s___0__s___1___TwoPRep_s___0__s___1___Ab__up_29[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_alpha1_rho_over_zeta2 1
 LIBINT2_REALTYPE alpha1_rho_over_zeta2[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_alpha2_rho_over_zeta2 1
@@ -127,6 +107,8 @@ LIBINT2_REALTYPE alpha2_rho_over_zeta2[LIBINT2_MAX_VECLEN];
 LIBINT2_REALTYPE alpha4_rho_over_eta2[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_rho12_over_alpha1 1
 LIBINT2_REALTYPE rho12_over_alpha1[LIBINT2_MAX_VECLEN];
+#define LIBINT2_DEFINED_rho12_over_alpha2 1
+LIBINT2_REALTYPE rho12_over_alpha2[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_rho34_over_alpha3 1
 LIBINT2_REALTYPE rho34_over_alpha3[LIBINT2_MAX_VECLEN];
 #define LIBINT2_DEFINED_AB_x 1
@@ -237,7 +219,7 @@ LIBINT2_REALTYPE* vstack;
 #ifdef __cplusplus
 mutable 
 #endif
-LIBINT2_REALTYPE* targets[25];
+LIBINT2_REALTYPE* targets[78];
 /** Actual vector length. Not to exceed MAX_VECLEN! If MAX_VECLEN is 1 then veclen is not used */
 int veclen;
 #if LIBINT2_FLOP_COUNT
@@ -284,9 +266,21 @@ typedef Libint_t Libint_1emultipole1_t;
 typedef Libint_t Libint_2emultipole1_t;
 typedef Libint_t Libint_3emultipole1_t;
 typedef Libint_t Libint_sphemultipole1_t;
+typedef Libint_t Libint_overlap2_t;
+typedef Libint_t Libint_kinetic2_t;
+typedef Libint_t Libint_elecpot2_t;
+typedef Libint_t Libint_1emultipole2_t;
+typedef Libint_t Libint_2emultipole2_t;
+typedef Libint_t Libint_3emultipole2_t;
+typedef Libint_t Libint_sphemultipole2_t;
 typedef Libint_t Libint_eri_t;
 typedef Libint_t Libint_eri1_t;
+typedef Libint_t Libint_eri2_t;
 typedef Libint_t Libint_3eri_t;
+typedef Libint_t Libint_3eri1_t;
+typedef Libint_t Libint_3eri2_t;
 typedef Libint_t Libint_2eri_t;
+typedef Libint_t Libint_2eri1_t;
+typedef Libint_t Libint_2eri2_t;
 #endif
 

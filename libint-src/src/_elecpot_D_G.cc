@@ -25,6 +25,10 @@
 #include <_elecpot_D_G_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _elecpot_D_G(const Libint_t* inteval) {
@@ -45,8 +49,8 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-HRRPart0ket0bra0gp(inteval, &(inteval->stack[((hsi*45+154)*1+lsi)*1]), &(inteval->stack[((hsi*21+15)*1+lsi)*1]), &(inteval->stack[((hsi*15+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0hp(inteval, &(inteval->stack[((hsi*63+199)*1+lsi)*1]), &(inteval->stack[((hsi*28+36)*1+lsi)*1]), &(inteval->stack[((hsi*21+15)*1+lsi)*1]),1);
+HRRPart0ket0bra0gp(inteval, &(inteval->stack[((hsi*45+154)*1+lsi)*1]), &(inteval->stack[((hsi*21+43)*1+lsi)*1]), &(inteval->stack[((hsi*15+0)*1+lsi)*1]),1);
+HRRPart0ket0bra0hp(inteval, &(inteval->stack[((hsi*63+199)*1+lsi)*1]), &(inteval->stack[((hsi*28+15)*1+lsi)*1]), &(inteval->stack[((hsi*21+43)*1+lsi)*1]),1);
 HRRPart0ket0bra0gd(inteval, &(inteval->stack[((hsi*90+64)*1+lsi)*1]), &(inteval->stack[((hsi*63+199)*1+lsi)*1]), &(inteval->stack[((hsi*45+154)*1+lsi)*1]),1);
 }
 }
@@ -60,4 +64,6 @@ inteval->targets[0] = &(inteval->stack[((hsi*90+64)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

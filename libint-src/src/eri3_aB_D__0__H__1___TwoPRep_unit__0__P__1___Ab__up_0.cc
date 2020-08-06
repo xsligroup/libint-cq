@@ -23,6 +23,10 @@
 #include <eri3_aB_D__0__H__1___TwoPRep_unit__0__P__1___Ab__up_0_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void eri3_aB_D__0__H__1___TwoPRep_unit__0__P__1___Ab__up_0(const Libint_t* inteval) {
@@ -56,4 +60,6 @@ inteval->targets[0] = &(inteval->stack[((hsi*378+294)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

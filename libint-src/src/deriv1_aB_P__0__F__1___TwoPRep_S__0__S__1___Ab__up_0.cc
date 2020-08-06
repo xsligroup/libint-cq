@@ -22,6 +22,10 @@
 #include <deriv1_aB_P__0__F__1___TwoPRep_S__0__S__1___Ab__up_0_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void deriv1_aB_P__0__F__1___TwoPRep_S__0__S__1___Ab__up_0(const Libint_t* inteval) {
@@ -695,4 +699,6 @@ inteval->targets[11] = &(inteval->stack[((hsi*30+240)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

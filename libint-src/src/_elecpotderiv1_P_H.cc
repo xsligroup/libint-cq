@@ -28,6 +28,10 @@
 #include <_elecpotderiv1_P_H_prereq.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _elecpotderiv1_P_H(const Libint_t* inteval) {
@@ -48,12 +52,12 @@ const int hsi = 0;
 const int lsi = 0;
 {
 const int vi = 0;
-HRRPart0ket0bra0h001p(inteval, &(inteval->stack[((hsi*63+630)*1+lsi)*1]), &(inteval->stack[((hsi*28+161)*1+lsi)*1]), &(inteval->stack[((hsi*21+294)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0h010p(inteval, &(inteval->stack[((hsi*63+567)*1+lsi)*1]), &(inteval->stack[((hsi*28+133)*1+lsi)*1]), &(inteval->stack[((hsi*21+273)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0h100p(inteval, &(inteval->stack[((hsi*63+504)*1+lsi)*1]), &(inteval->stack[((hsi*28+105)*1+lsi)*1]), &(inteval->stack[((hsi*21+252)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0hp001(inteval, &(inteval->stack[((hsi*63+441)*1+lsi)*1]), &(inteval->stack[((hsi*28+77)*1+lsi)*1]), &(inteval->stack[((hsi*21+231)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0hp010(inteval, &(inteval->stack[((hsi*63+378)*1+lsi)*1]), &(inteval->stack[((hsi*28+49)*1+lsi)*1]), &(inteval->stack[((hsi*21+210)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
-HRRPart0ket0bra0hp100(inteval, &(inteval->stack[((hsi*63+315)*1+lsi)*1]), &(inteval->stack[((hsi*28+21)*1+lsi)*1]), &(inteval->stack[((hsi*21+189)*1+lsi)*1]), &(inteval->stack[((hsi*21+0)*1+lsi)*1]),1);
+HRRPart0ket0bra0h001p(inteval, &(inteval->stack[((hsi*63+630)*1+lsi)*1]), &(inteval->stack[((hsi*28+266)*1+lsi)*1]), &(inteval->stack[((hsi*21+294)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
+HRRPart0ket0bra0h010p(inteval, &(inteval->stack[((hsi*63+567)*1+lsi)*1]), &(inteval->stack[((hsi*28+217)*1+lsi)*1]), &(inteval->stack[((hsi*21+245)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
+HRRPart0ket0bra0h100p(inteval, &(inteval->stack[((hsi*63+504)*1+lsi)*1]), &(inteval->stack[((hsi*28+168)*1+lsi)*1]), &(inteval->stack[((hsi*21+196)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
+HRRPart0ket0bra0hp001(inteval, &(inteval->stack[((hsi*63+441)*1+lsi)*1]), &(inteval->stack[((hsi*28+119)*1+lsi)*1]), &(inteval->stack[((hsi*21+147)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
+HRRPart0ket0bra0hp010(inteval, &(inteval->stack[((hsi*63+378)*1+lsi)*1]), &(inteval->stack[((hsi*28+70)*1+lsi)*1]), &(inteval->stack[((hsi*21+98)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
+HRRPart0ket0bra0hp100(inteval, &(inteval->stack[((hsi*63+315)*1+lsi)*1]), &(inteval->stack[((hsi*28+0)*1+lsi)*1]), &(inteval->stack[((hsi*21+28)*1+lsi)*1]), &(inteval->stack[((hsi*21+49)*1+lsi)*1]),1);
 }
 }
 }
@@ -71,4 +75,6 @@ inteval->targets[5] = &(inteval->stack[((hsi*63+630)*1+lsi)*1]);
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

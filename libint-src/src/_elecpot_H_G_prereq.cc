@@ -31,6 +31,10 @@
 #include <OSVRRElecPotInBra_aB_p__0___ElecPot_s__0___Ab__up_0.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _elecpot_H_G_prereq(const Libint_t* inteval, LIBINT2_REALTYPE* parent_stack) {
@@ -103,4 +107,6 @@ const int vi = 0;
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

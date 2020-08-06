@@ -51,6 +51,10 @@
 #include <OSVRRElecPotInKet_aB_s__0___ElecPot_p__0___Ab__up_0.h>
 
 #ifdef __cplusplus
+LIBINT_PRAGMA_CLANG(diagnostic push)
+LIBINT_PRAGMA_CLANG(diagnostic ignored "-Wunused-variable")
+LIBINT_PRAGMA_GCC(diagnostic push)
+LIBINT_PRAGMA_GCC(diagnostic ignored "-Wunused-variable")
 extern "C" {
 #endif
 void _elecpotderiv1_D_H_prereq(const Libint_t* inteval, LIBINT2_REALTYPE* parent_stack) {
@@ -134,11 +138,11 @@ _libint2_static_api_inc1_short_(&(stack[((hsi*36+134)*1+lsi)*1]),&(stack[((hsi*3
 _libint2_static_api_inc1_short_(&(stack[((hsi*21+113)*1+lsi)*1]),&(stack[((hsi*21+649)*1+lsi)*1]),21);
 CR_DerivGaussP0InBra_aB_s100__0___ElecPot_h__0___Ab__up_0(inteval, &(stack[((hsi*21+595)*1+lsi)*1]), &(stack[((hsi*63+983)*1+lsi)*1]));
 _libint2_static_api_inc1_short_(&(stack[((hsi*21+92)*1+lsi)*1]),&(stack[((hsi*21+595)*1+lsi)*1]),21);
+_libint2_static_api_inc1_short_(&(stack[((hsi*28+64)*1+lsi)*1]),&(stack[((hsi*28+706)*1+lsi)*1]),28);
 CR_DerivGaussP0InBra_aB_s100__0___ElecPot_i__0___Ab__up_0(inteval, &(stack[((hsi*28+983)*1+lsi)*1]), &(stack[((hsi*84+1067)*1+lsi)*1]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*28+64)*1+lsi)*1]),&(stack[((hsi*28+983)*1+lsi)*1]),28);
+_libint2_static_api_inc1_short_(&(stack[((hsi*28+36)*1+lsi)*1]),&(stack[((hsi*28+983)*1+lsi)*1]),28);
 CR_DerivGaussP0InBra_aB_s100__0___ElecPot_k__0___Ab__up_0(inteval, &(stack[((hsi*36+1067)*1+lsi)*1]), &(stack[((hsi*108+1179)*1+lsi)*1]));
-_libint2_static_api_inc1_short_(&(stack[((hsi*36+28)*1+lsi)*1]),&(stack[((hsi*36+1067)*1+lsi)*1]),36);
-_libint2_static_api_inc1_short_(&(stack[((hsi*28+0)*1+lsi)*1]),&(stack[((hsi*28+706)*1+lsi)*1]),28);
+_libint2_static_api_inc1_short_(&(stack[((hsi*36+0)*1+lsi)*1]),&(stack[((hsi*36+1067)*1+lsi)*1]),36);
 }
 }
 }
@@ -150,4 +154,6 @@ const int vi = 0;
 
 #ifdef __cplusplus
 };
+LIBINT_PRAGMA_CLANG(diagnostic pop)
+LIBINT_PRAGMA_GCC(diagnostic pop)
 #endif

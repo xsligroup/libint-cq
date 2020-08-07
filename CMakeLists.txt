@@ -32,6 +32,7 @@ redefaultable_option(REQUIRE_CXX_API "C++11 Libint interface" ON)
 redefaultable_option(ENABLE_FORTRAN "Fortran03+ Libint interface" OFF)
 redefaultable_option(ENABLE_MPFR "Use GNU MPFR library for high-precision testing (EXPERTS ONLY)" OFF)
 redefaultable_option(LIBINT2_BUILD_SHARED_AND_STATIC_LIBS "Build in one shot static and shared library variants. Uses -fPIC." OFF)
+redefaultable_option(LIBINT2_ENABLE_TESTING "Enable Tests for Libint2" OFF)
 if (NOT LIBINT2_REALTYPE)
     set(LIBINT2_REALTYPE double)
 endif()
@@ -272,93 +273,95 @@ endif(LIBINT_HAS_CXX_API)
 
 # Tests ================================================================================================================
 
-enable_testing(true)
-add_custom_target_subproject(libint2 check USES_TERMINAL COMMAND ${CMAKE_CTEST_COMMAND} -V)
-
-add_executable(eritest-libint2 EXCLUDE_FROM_ALL tests/eri/test.cc)
-target_link_libraries(eritest-libint2 ${int2_library})
-target_include_directories(eritest-libint2 PRIVATE ${PROJECT_SOURCE_DIR}/tests/eri)
-
-add_test(eritest-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target eritest-libint2)
-set_tests_properties(eritest-libint2/build PROPERTIES FIXTURES_SETUP ERITEST_EXEC)
-add_test(NAME eritest-libint2/run0
-        COMMAND $<TARGET_FILE:eritest-libint2> 0 2)
-set_tests_properties(eritest-libint2/run0
-        PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
-add_test(NAME eritest-libint2/run1
-        COMMAND $<TARGET_FILE:eritest-libint2> 1 1)
-set_tests_properties(eritest-libint2/run1
-        PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
-add_test(NAME eritest-libint2/run2
-        COMMAND $<TARGET_FILE:eritest-libint2> 2 1)
-set_tests_properties(eritest-libint2/run2
-        PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
-
-if (LIBINT_HAS_CXX_API)
-    set(utests_src
-            tests/unit/c-api.c
-            tests/unit/c-api-util.cc
-            tests/unit/catch.hpp
-            tests/unit/fixture.h
-            tests/unit/test-1body.cc
-            tests/unit/test-2body.cc
-            tests/unit/test-core-ints.cc
-            tests/unit/test-c-api.cc
-            tests/unit/test-core.cc
-            tests/unit/test-permute.cc
-            tests/unit/test-shell-order.cc
-            tests/unit/test-util.cc
-            )
-    add_executable(unit_tests-libint2 EXCLUDE_FROM_ALL tests/unit/test.cc ${utests_src})
-    target_link_libraries(unit_tests-libint2 libint2_cxx)
-    add_test(unit_tests-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target unit_tests-libint2)
-    set_tests_properties(unit_tests-libint2/build PROPERTIES FIXTURES_SETUP UNIT_TESTS_EXEC)
-    add_test(NAME unit_tests-libint2/run
-             COMMAND $<TARGET_FILE:unit_tests-libint2>)
-    set_tests_properties(unit_tests-libint2/run
-                         PROPERTIES FIXTURES_REQUIRED UNIT_TESTS_EXEC)
-
-    add_executable(hf-libint2 EXCLUDE_FROM_ALL tests/hartree-fock/hartree-fock.cc)
-    target_link_libraries(hf-libint2 libint2_cxx)
-    add_test(hf-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target hf-libint2)
-    set_tests_properties(hf-libint2/build PROPERTIES FIXTURES_SETUP HFTEST_EXEC)
-    if (PYTHONINTERP_FOUND)
-        add_test(NAME hf-libint2/run
-                 COMMAND ${CMAKE_COMMAND}
-                 -DtestName=hf-libint2
-                 -DfileName=hartree-fock
-                 -DtestArgs=${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o.xyz
-                 -DsrcDir=${PROJECT_SOURCE_DIR}
-                 -DpythonExec=${PYTHON_EXECUTABLE}
-                 -P ${PROJECT_SOURCE_DIR}/cmake/hftest.cmake)
-    else()
-        add_test(NAME hf-libint2/run
-                COMMAND $<TARGET_FILE:hf-libint2> ${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o.xyz)
-    endif()
-    set_tests_properties(hf-libint2/run
-            PROPERTIES FIXTURES_REQUIRED HFTEST_EXEC)
-
-    find_package(Threads)  # for some reason clang does not link in threading support even though we are using C++ threads
-    add_executable(hf++-libint2 EXCLUDE_FROM_ALL tests/hartree-fock/hartree-fock++.cc)
-    target_link_libraries(hf++-libint2 libint2_cxx Threads::Threads)
-    add_test(hf++-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target hf++-libint2)
-    set_tests_properties(hf++-libint2/build PROPERTIES FIXTURES_SETUP HFXXTEST_EXEC)
-    if (PYTHONINTERP_FOUND)
-        add_test(NAME hf++-libint2/run
-                 COMMAND ${CMAKE_COMMAND}
-                 -DtestName=hf++-libint2
-                 -DfileName=hartree-fock++
-                 -DtestArgs=${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o_rotated.xyz
-                 -DsrcDir=${PROJECT_SOURCE_DIR}
-                 -DpythonExec=${PYTHON_EXECUTABLE}
-                 -P ${PROJECT_SOURCE_DIR}/cmake/hftest.cmake)
-    else()
-        add_test(NAME hf++-libint2/run
-                COMMAND $<TARGET_FILE:hf++-libint2> ${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o_rotated.xyz)
-    endif()
-    set_tests_properties(hf++-libint2/run
-            PROPERTIES FIXTURES_REQUIRED HFXXTEST_EXEC)
-endif (LIBINT_HAS_CXX_API)
+if ( LIBINT2_ENABLE_TESTING )
+    enable_testing(true)
+    add_custom_target_subproject(libint2 check USES_TERMINAL COMMAND ${CMAKE_CTEST_COMMAND} -V)
+    
+    add_executable(eritest-libint2 EXCLUDE_FROM_ALL tests/eri/test.cc)
+    target_link_libraries(eritest-libint2 ${int2_library})
+    target_include_directories(eritest-libint2 PRIVATE ${PROJECT_SOURCE_DIR}/tests/eri)
+    
+    add_test(eritest-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target eritest-libint2)
+    set_tests_properties(eritest-libint2/build PROPERTIES FIXTURES_SETUP ERITEST_EXEC)
+    add_test(NAME eritest-libint2/run0
+            COMMAND $<TARGET_FILE:eritest-libint2> 0 2)
+    set_tests_properties(eritest-libint2/run0
+            PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
+    add_test(NAME eritest-libint2/run1
+            COMMAND $<TARGET_FILE:eritest-libint2> 1 1)
+    set_tests_properties(eritest-libint2/run1
+            PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
+    add_test(NAME eritest-libint2/run2
+            COMMAND $<TARGET_FILE:eritest-libint2> 2 1)
+    set_tests_properties(eritest-libint2/run2
+            PROPERTIES FIXTURES_REQUIRED ERITEST_EXEC)
+    
+    if (LIBINT_HAS_CXX_API)
+        set(utests_src
+                tests/unit/c-api.c
+                tests/unit/c-api-util.cc
+                tests/unit/catch.hpp
+                tests/unit/fixture.h
+                tests/unit/test-1body.cc
+                tests/unit/test-2body.cc
+                tests/unit/test-core-ints.cc
+                tests/unit/test-c-api.cc
+                tests/unit/test-core.cc
+                tests/unit/test-permute.cc
+                tests/unit/test-shell-order.cc
+                tests/unit/test-util.cc
+                )
+        add_executable(unit_tests-libint2 EXCLUDE_FROM_ALL tests/unit/test.cc ${utests_src})
+        target_link_libraries(unit_tests-libint2 libint2_cxx)
+        add_test(unit_tests-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target unit_tests-libint2)
+        set_tests_properties(unit_tests-libint2/build PROPERTIES FIXTURES_SETUP UNIT_TESTS_EXEC)
+        add_test(NAME unit_tests-libint2/run
+                 COMMAND $<TARGET_FILE:unit_tests-libint2>)
+        set_tests_properties(unit_tests-libint2/run
+                             PROPERTIES FIXTURES_REQUIRED UNIT_TESTS_EXEC)
+    
+        add_executable(hf-libint2 EXCLUDE_FROM_ALL tests/hartree-fock/hartree-fock.cc)
+        target_link_libraries(hf-libint2 libint2_cxx)
+        add_test(hf-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target hf-libint2)
+        set_tests_properties(hf-libint2/build PROPERTIES FIXTURES_SETUP HFTEST_EXEC)
+        if (PYTHONINTERP_FOUND)
+            add_test(NAME hf-libint2/run
+                     COMMAND ${CMAKE_COMMAND}
+                     -DtestName=hf-libint2
+                     -DfileName=hartree-fock
+                     -DtestArgs=${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o.xyz
+                     -DsrcDir=${PROJECT_SOURCE_DIR}
+                     -DpythonExec=${PYTHON_EXECUTABLE}
+                     -P ${PROJECT_SOURCE_DIR}/cmake/hftest.cmake)
+        else()
+            add_test(NAME hf-libint2/run
+                    COMMAND $<TARGET_FILE:hf-libint2> ${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o.xyz)
+        endif()
+        set_tests_properties(hf-libint2/run
+                PROPERTIES FIXTURES_REQUIRED HFTEST_EXEC)
+    
+        find_package(Threads)  # for some reason clang does not link in threading support even though we are using C++ threads
+        add_executable(hf++-libint2 EXCLUDE_FROM_ALL tests/hartree-fock/hartree-fock++.cc)
+        target_link_libraries(hf++-libint2 libint2_cxx Threads::Threads)
+        add_test(hf++-libint2/build "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target hf++-libint2)
+        set_tests_properties(hf++-libint2/build PROPERTIES FIXTURES_SETUP HFXXTEST_EXEC)
+        if (PYTHONINTERP_FOUND)
+            add_test(NAME hf++-libint2/run
+                     COMMAND ${CMAKE_COMMAND}
+                     -DtestName=hf++-libint2
+                     -DfileName=hartree-fock++
+                     -DtestArgs=${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o_rotated.xyz
+                     -DsrcDir=${PROJECT_SOURCE_DIR}
+                     -DpythonExec=${PYTHON_EXECUTABLE}
+                     -P ${PROJECT_SOURCE_DIR}/cmake/hftest.cmake)
+        else()
+            add_test(NAME hf++-libint2/run
+                    COMMAND $<TARGET_FILE:hf++-libint2> ${PROJECT_SOURCE_DIR}/tests/hartree-fock/h2o_rotated.xyz)
+        endif()
+        set_tests_properties(hf++-libint2/run
+                PROPERTIES FIXTURES_REQUIRED HFXXTEST_EXEC)
+    endif (LIBINT_HAS_CXX_API)
+endif()
 
 # Fortran bindings =====================================================================================================
 

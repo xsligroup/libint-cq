@@ -49,7 +49,7 @@
 /* #undef LIBINT_API_PREFIX */
 
 /* Max AM (same for all derivatives; if not defined see LIBINT_MAX_AM_LIST) */
-#define LIBINT_MAX_AM 5
+#define LIBINT_MAX_AM 7
 
 /* Max AM for integrals and their derivatives */
 /* #undef LIBINT_MAX_AM_LIST */
@@ -61,19 +61,19 @@
 /* #undef LIBINT_OPT_AM_LIST */
 
 /* Support 1-body derivatives up to this order */
-#define INCLUDE_ONEBODY 2
+#define INCLUDE_ONEBODY 1
 
 /* Disable support for 1-body property derivatives */
 #define DISABLE_ONEBODY_PROPERTY_DERIVS 1
 
 /* Support ERI derivatives up to this order */
-#define INCLUDE_ERI 2
+#define INCLUDE_ERI 1
 
 /* Support 3-center ERI derivatives up to this order */
-#define INCLUDE_ERI3 2
+#define INCLUDE_ERI3 0
 
 /* Support 2-center ERI derivatives up to this order */
-#define INCLUDE_ERI2 2
+#define INCLUDE_ERI2 0
 
 /* Support G12 derivatives up to this order */
 /* #undef INCLUDE_G12 */
